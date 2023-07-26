@@ -81,7 +81,7 @@
         let announcement = await getArticle(timestamp).then((res) => res[0]);
 
         article.innerHTML += `
-          <div class="border-2 border-slate-400 rounded-md my-4 p-3 overflow-x-auto">
+          <div class="border-2 border-slate-400 rounded-md my-4 p-3">
             <h2 class="mb-1">
               <span class="bg-sky-500/75 text-white py-[2px] px-[8px] mr-2 rounded-lg">#${
                 announcement.department
@@ -89,11 +89,13 @@
             </h2>
             <p>${countDays(announcement.date)}</p>
             <hr class="my-2" />
-            <p class="">${
-              announcement.content
-                .split(`<hr class="clear-contentunit"/>`)[1]
-                .split(`<hr/>`)[0]
-            }</p>
+            <div class="overflow-x-auto">
+              ${
+                announcement.content
+                  .split(`<hr class="clear-contentunit"/>`)[1]
+                  .split(`<hr/>`)[0]
+              }
+            </div>
 
             <hr class="my-2" />
 
