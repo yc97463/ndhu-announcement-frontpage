@@ -4,6 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>National Dong Hwa University - Announcements</title>
+    <meta property="og:title" content="國立東華大學公告" />
+    <meta property="og:description" content="國立東華大學公告" />
+
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
@@ -90,6 +93,21 @@
         }
 
         document.title = announcement.title;
+
+        // replace meta data title and description with announcement title and content
+        document
+          .querySelector('meta[property="og:title"]')
+          .setAttribute("content", announcement.title);
+        document
+          .querySelector('meta[property="og:description"]')
+          .setAttribute(
+            "content",
+            announcement.content
+              .split(`<hr/>`)[0]
+              .split(`<pre>`)[2]
+              .split(`</pre>`)[0]
+          );
+
         article.innerHTML += `
           <div class="border-2 border-slate-400 rounded-md my-4 p-3">
             <h2 class="mb-1">
