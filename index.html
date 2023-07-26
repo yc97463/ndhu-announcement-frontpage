@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>National Dong Hwa University - Announcements</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          fontFamily: {
+            sans: '"Noto Sans TC", Arial, sans-serif',
+          },
+          container: {
+            padding: "1rem",
+            center: true,
+            screens: {
+              xl: "1024px",
+            },
+          },
+          extend: {
+            backgroundImage: {},
+            opacity: {
+              15: "0.15",
+            },
+          },
+        },
+      };
+    </script>
+    <style type="text/tailwindcss">
+      @layer utilities {
+        .content-auto {
+          content-visibility: auto;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container my-6">
+      <h1 class="text-4xl font-medium mb-4">國立東華大學公告</h1>
+      <div id="all"></div>
+    </div>
+
+    <script type="text/javascript">
+      let all = document.getElementById("all");
+
+      function countDays(date) {
+        let now = new Date();
+        let target = new Date(date);
+        let diff = now.getTime() - target.getTime();
+        let days = Math.floor(diff / (1000 * 60 * 60 * 24));
+
+        if (days <= 0) {
+          // return n minutes ago
+          let minutes = Math.floor(diff / (1000 * 60));
+          console.log(minutes);
+          if (minutes <= 5) {
+            return "剛剛";
+          } else if (minutes <= 60) {
+            return `${minutes} 分鐘前`;
+          } else {
+            return `${Math.floor(minutes / 60)} 小時前`;
+          }
+        } else if (days == 1) {
+          return "昨天";
+        } else if (days == 2) {
+          return "前天";
+        } else {
+          return `${days} 天前`;
+        }
+      }
+
+      async function getLatest() {
+        return await fetch(
+          "https://yc97463.github.io/ndhu-announcement/latest.json"
+        ).then((res) => res.json());
+      }
+      window.onload = async () => {
+        let latest = await getLatest();
+
+        for (let i = 0; i < latest.length; i++) {
+          let announcement = latest[i];
+          all.innerHTML += `
+          <a href="https://announce.ndhu.edu.tw/${
+            announcement.url
+          }" target="_blank">
+            <div class="border-2 border-slate-300 hover:border-slate-400 rounded-md my-4 p-3">
+              <h2 class="mb-1">
+                <span class="bg-sky-500/75 text-white py-[2px] px-[8px] mr-2 rounded-lg">#${
+                  announcement.department
+                }</span>${announcement.title}
+              </h2>
+              <p>${countDays(announcement.date)}</p>
+              <p></p>
+
+            </div>  
+          </a>
+          `;
+        }
+      };
+    </script>
+  </body>
+</html>
