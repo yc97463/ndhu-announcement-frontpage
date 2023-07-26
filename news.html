@@ -119,9 +119,11 @@
         } catch (e) {}
 
         article.innerHTML = `
-            <p class="text-center text-gray-500">
-              如果公告無法正常顯示，請前往 <a href="https://announce.ndhu.edu.tw/mail_display.php?timestamp=${announcement.timestamp}">https://announce.ndhu.edu.tw/#${announcement.timestamp}</a> 查看。
+          <div class="overflow-x-auto">
+            <p class="text-center text-gray-500 ">
+              如果內容無法正常顯示，請前往 <a href="https://announce.ndhu.edu.tw/mail_display.php?timestamp=${announcement.timestamp}">#${announcement.timestamp}</a> 查看。
             </p>
+          </div>
             `;
         article.innerHTML += `
           <div class="border-2 border-slate-400 rounded-md my-4 p-3">
