@@ -79,6 +79,15 @@
       window.onload = async () => {
         let timestamp = new URLSearchParams(window.location.search).get("id");
         let announcement = await getArticle(timestamp).then((res) => res[0]);
+        let attachments = null;
+        try {
+          attachments = announcement.content
+            .split(`<hr class="clear-contentunit"/>`)[1]
+            .split(`<hr/>`)[1]
+            .split(`<p>`)[1];
+        } catch (e) {
+          attachments = `<li>無附件</li>`;
+        }
 
         article.innerHTML += `
           <div class="border-2 border-slate-400 rounded-md my-4 p-3">
@@ -101,12 +110,7 @@
 
             <h3 class="text-xl font-medium mb-2">附件</h3>
             <ul>
-              ${
-                announcement.content
-                  .split(`<hr class="clear-contentunit"/>`)[1]
-                  .split(`<hr/>`)[1]
-                  .split(`<p>`)[1]
-              }
+              ${attachments}
             </ul>
           </div>
           `;
