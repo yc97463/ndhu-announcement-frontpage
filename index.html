@@ -112,10 +112,15 @@
         }
       }
 
-      async function getByCategory(category) {
-        return await fetch(
-          `https://yc97463.github.io/ndhu-announcement/${category}/1.json`
-        ).then((res) => res.json());
+      async function getByCategory(category, name) {
+        try {
+          return await fetch(
+            `https://yc97463.github.io/ndhu-announcement/${category}/1.json`
+          ).then((res) => res.json());
+        } catch (e) {
+          alert(`無法取得「${name}」的公告資料`);
+          return [];
+        }
       }
       window.onload = async () => {
         let category = [
@@ -173,7 +178,7 @@
         });
 
         category.map(async (item) => {
-          let list = await getByCategory(item.category);
+          let list = await getByCategory(item.category, item.name);
           let html = "";
           for (let i = 0; i < list.length; i++) {
             let announcement = list[i];
