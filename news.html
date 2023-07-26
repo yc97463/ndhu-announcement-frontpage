@@ -34,15 +34,16 @@
         }
       }
     </style>
+    <base href="https://announce.ndhu.edu.tw/" />
   </head>
   <body>
     <div class="container my-6">
       <h1 class="text-4xl font-medium mb-4">國立東華大學公告</h1>
-      <div id="all"></div>
+      <div id="article"></div>
     </div>
 
     <script type="text/javascript">
-      let all = document.getElementById("all");
+      let article = document.getElementById("article");
 
       function countDays(date) {
         let now = new Date();
@@ -70,31 +71,30 @@
         }
       }
 
-      async function getLatest() {
+      async function getArticle(timestamp) {
         return await fetch(
-          "https://yc97463.github.io/ndhu-announcement/latest.json"
+          `https://yc97463.github.io/ndhu-announcement/${timestamp}.json`
         ).then((res) => res.json());
       }
       window.onload = async () => {
-        let latest = await getLatest();
+        let timestamp = new URLSearchParams(window.location.search).get("id");
+        let announcement = await getArticle(timestamp).then((res) => res[0]);
 
-        for (let i = 0; i < latest.length; i++) {
-          let announcement = latest[i];
-          all.innerHTML += `
-          <a href="news.html?id=${announcement.timestamp}" target="_blank">
-            <div class="border-2 border-slate-300 hover:border-slate-400 rounded-md my-4 p-3">
-              <h2 class="mb-1">
-                <span class="bg-sky-500/75 text-white py-[2px] px-[8px] mr-2 rounded-lg">#${
-                  announcement.department
-                }</span>${announcement.title}
-              </h2>
-              <p>${countDays(announcement.date)}</p>
-              <p></p>
+        article.innerHTML += `
+          <div class="border-2 border-slate-300 hover:border-slate-400 rounded-md my-4 p-3">
+            <h2 class="mb-1">
+              <span class="bg-sky-500/75 text-white py-[2px] px-[8px] mr-2 rounded-lg">#${
+                announcement.department
+              }</span>${announcement.title}
+            </h2>
+            <p>${countDays(announcement.date)}</p>
+            <hr class="my-2" />
+            <p>${
+              announcement.content.split(`<hr class="clear-contentunit"/>`)[1]
+            }</p>
 
-            </div>  
-          </a>
+          </div>
           `;
-        }
       };
     </script>
   </body>
