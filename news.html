@@ -76,7 +76,7 @@
 
       async function getArticle(timestamp) {
         return await fetch(
-          `https://yc97463.github.io/ndhu-announcement/${timestamp}.json`
+          `https://yc97463.github.io/ndhu-announcement/article/${timestamp}.json`
         ).then((res) => res.json());
       }
       window.onload = async () => {
