@@ -1,0 +1,35 @@
+name: Build and Deploy
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '16'
+
+    - name: Install dependencies
+      run: npm install
+
+    - name: Build HTML files
+      run: npx ts-node src/generate.ts
+
+    # copy index.html from root to dist
+    - name: Copy index.html
+      run: cp index.html src/dist/index.html
+
+    - name: Upload HTML files
+      uses: actions/upload-artifact@v2
+      with:
+        name: news-html
+        path: src/dist
