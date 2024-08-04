@@ -105,25 +105,29 @@ const fetchNewsData = async (url: string): Promise<News[]> => {
 };
 
 category.map(async (item) => {
+    console.log(`Generating ${item.name}...`);
+
     // 5 pages of simple news list
     for (let i = 1; i <= 5; i++) {
+        console.log(`Fetching ${item.name} page ${i}...`);
+
         const news_list_url = `${baseUrl}/${item.category}/${i}.json`;
-        // fetch the json
-        // const newsData: News[] = await fetch(news_list_url).then((res) => res.json());
         let newsData: News[] = [];
         try {
             newsData = await fetchNewsData(news_list_url);
+            console.log(`Fetched ${newsData.length} news items`);
         } catch (error) {
             console.error('Error fetching news data:', error);
         }
-
-
 
         // for each news item, generate a html file
         const outputDir = path.join(__dirname, 'dist', item.category);
         ensureDirSync(outputDir);
 
         newsData.forEach(async (newsItem, index) => {
+            console.log(`Generating ${item.category}/${newsItem.timestamp}.html...`);
+            console.log(`\t ${item.name} \t ${newsItem.title}`);
+
             const news_detail_url = `${baseUrl}/article/${newsItem.timestamp}.json`;
             let newsDetail: News[] = [];
             try {
@@ -139,7 +143,9 @@ category.map(async (item) => {
             const outputPath = path.join(outputDir, `${newsItem.timestamp}.html`);
             fs.writeFileSync(outputPath, html);
         });
+        console.log(`Generated ${item.name} page ${i}`);
     }
+    console.log(`Generated ${item.name}`);
 
 });
 
