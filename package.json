@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "npx ts-node src/generate.ts"
+    "build": "npx ts-node-esm src/generate.ts"
   },
   "keywords": [],
   "author": "",
