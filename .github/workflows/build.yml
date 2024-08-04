@@ -24,7 +24,7 @@ jobs:
     - name: Build HTML files
       run: npx ts-node src/generate.ts
 
-    # copy index.html from root to dist
+    # Ensure index.html is copied to dist
     - name: Copy index.html
       run: cp index.html src/dist/index.html
 
