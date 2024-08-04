@@ -183,7 +183,7 @@
           for (let i = 0; i < list.length; i++) {
             let announcement = list[i];
             html += `
-            <a href="news.html?id=${announcement.timestamp}" target="_blank">
+            <a href="./${item.category}/${announcement.timestamp}.html" target="_blank">
               <div class="border-2 border-slate-300 hover:border-slate-400 rounded-md my-4 p-3">
                 <h2 class="mb-1">
                   <span class="bg-sky-500/75 text-white py-[2px] px-[8px] mr-2 rounded-lg">#${
