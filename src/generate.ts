@@ -1,6 +1,8 @@
 import * as fs from 'fs';
 import * as path from 'path';
 import * as ejs from 'ejs';
+import fetch from 'node-fetch';
+import { fileURLToPath } from 'url';
 
 interface News {
     title: string;
@@ -62,6 +64,10 @@ const category = [
     },
 ];
 
+// Determine __dirname in ESM
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+// Use __dirname to read the file
 const template = fs.readFileSync(path.join(__dirname, 'template.ejs'), 'utf-8');
 
 function ensureDirSync(dirPath: string) {
@@ -84,20 +90,48 @@ function getOgDescription(content: string): string {
     return '';
 }
 
+const fetchNewsData = async (url: string): Promise<News[]> => {
+    const response = await fetch(url);
+
+    // Use type assertion here
+    const data = (await response.json()) as News[];
+
+    // Optionally, validate the structure of data here
+    if (!Array.isArray(data)) {
+        throw new Error("Data is not an array");
+    }
+
+    return data;
+};
+
 category.map(async (item) => {
     // 5 pages of simple news list
     for (let i = 1; i <= 5; i++) {
         const news_list_url = `${baseUrl}/${item.category}/${i}.json`;
         // fetch the json
-        const newsData: News[] = await fetch(news_list_url).then((res) => res.json());
-        // for each news item, generate a html file
+        // const newsData: News[] = await fetch(news_list_url).then((res) => res.json());
+        let newsData: News[] = [];
+        try {
+            newsData = await fetchNewsData(news_list_url);
+        } catch (error) {
+            console.error('Error fetching news data:', error);
+        }
 
+
+
+        // for each news item, generate a html file
         const outputDir = path.join(__dirname, 'dist', item.category);
         ensureDirSync(outputDir);
 
         newsData.forEach(async (newsItem, index) => {
             const news_detail_url = `${baseUrl}/article/${newsItem.timestamp}.json`;
-            let newsDetail: News[] = await fetch(news_detail_url).then((res) => res.json());
+            let newsDetail: News[] = [];
+            try {
+                newsDetail = await fetchNewsData(news_detail_url);
+            } catch (error) {
+                console.error('Error fetching news detail:', error);
+            }
+
             // add "category" item to the news detail
             newsDetail[0].category = item.name;
 
