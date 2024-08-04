@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>National Dong Hwa University - Announcements</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          fontFamily: {
+            sans: '"Noto Sans TC", Arial, sans-serif',
+          },
+          container: {
+            padding: "1rem",
+            center: true,
+            screens: {
+              xl: "1024px",
+            },
+          },
+          extend: {
+            backgroundImage: {},
+            opacity: {
+              15: "0.15",
+            },
+          },
+        },
+      };
+    </script>
+    <style type="text/tailwindcss">
+      @layer utilities {
+        .content-auto {
+          content-visibility: auto;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container my-6">
+      <h1 class="text-4xl font-medium mb-4">國立東華大學公告</h1>
+      <div id="category"></div>
+      <div class="my-6">
+        <input
+          type="text"
+          id="search"
+          class="border-2 border-slate-300 rounded-md p-2 w-full"
+          placeholder="搜尋公告"
+        />
+      </div>
+      <hr class="my-6" />
+      <div id="all"></div>
+    </div>
+    <div class="container footer text-center text-slate-500">
+      <p class="mb-2">
+        更多公告請至
+        <a
+          href="https://announce.ndhu.edu.tw/"
+          target="_blank"
+          class="text-sky-500 hover:text-sky-600"
+          >國立東華大學公告</a
+        >
+      </p>
+    </div>
+
+    <a
+      href="#"
+      class="fixed bottom-4 right-4 bg-sky-500 text-white p-3 rounded-full shadow-lg hover:bg-sky-600 hover:text-white transition-all duration-300"
+      id="top"
+    >
+      <!-- arrow point top svg icon -->
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-6 w-6 transform rotate-0"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M5 10l7-7m0 0l7 7m-7-7v18"
+        />
+      </svg>
+    </a>
+
+    <script type="text/javascript">
+      let all = document.getElementById("all");
+
+      function countDays(date) {
+        let now = new Date();
+        let target = new Date(date);
+        let diff = now.getTime() - target.getTime();
+        let days = Math.floor(diff / (1000 * 60 * 60 * 24));
+
+        if (days <= 0) {
+          // return n minutes ago
+          let minutes = Math.floor(diff / (1000 * 60));
+          if (minutes <= 5) {
+            return "剛剛";
+          } else if (minutes <= 60) {
+            return `${minutes} 分鐘前`;
+          } else {
+            return `${Math.floor(minutes / 60)} 小時前`;
+          }
+        } else if (days == 1) {
+          return "昨天";
+        } else if (days == 2) {
+          return "前天";
+        } else {
+          return `${days} 天前`;
+        }
+      }
+
+      async function getByCategory(category, name) {
+        try {
+          return await fetch(
+            `https://yc97463.github.io/ndhu-announcement/${category}/1.json`
+          ).then((res) => res.json());
+        } catch (e) {
+          alert(`無法取得「${name}」的公告資料`);
+          return [];
+        }
+      }
+      window.onload = async () => {
+        let category = [
+          {
+            id: 0,
+            name: "全部消息",
+            category: "latest",
+          },
+          {
+            id: 1,
+            name: "行政公告",
+            category: "administration",
+          },
+          {
+            id: 2,
+            name: "活動公告",
+            category: "events",
+          },
+          {
+            id: 3,
+            name: "課程公告",
+            category: "course",
+          },
+          {
+            id: 4,
+            name: "招生公告",
+            category: "admission",
+          },
+          {
+            id: 5,
+            name: "研討會",
+            category: "conference",
+          },
+          {
+            id: 6,
+            name: "獎助學金",
+            category: "pt-scholarship",
+          },
+          {
+            id: 7,
+            name: "徵才資訊",
+            category: "carreer",
+          },
+          {
+            id: 8,
+            name: "其他公告",
+            category: "other",
+          },
+        ];
+
+        category.map((item) => {
+          document.getElementById("category").innerHTML += `
+          <a href="#${item.category}" class="mr-4 text-sky-500 hover:text-sky-600">${item.name}</a>
+          `;
+        });
+
+        category.map(async (item) => {
+          let list = await getByCategory(item.category, item.name);
+          let html = "";
+          for (let i = 0; i < list.length; i++) {
+            let announcement = list[i];
+            html += `
+            <a href="./${item.category}/${announcement.timestamp}.html" target="_blank">
+              <div class="border-2 border-slate-300 hover:border-slate-400 rounded-md my-4 p-3">
+                <h2 class="mb-1">
+                  <span class="bg-sky-500/75 text-white py-[2px] px-[8px] mr-2 rounded-lg">#${
+                    announcement.department
+                  }</span>${announcement.title}
+                </h2>
+                <p>${countDays(announcement.date)}</p>
+                <p></p>
+              </div>
+            </a>
+            `;
+          }
+          all.innerHTML += `
+          <div class="mb-6">
+            <a id="${item.category}"></a>
+            <h2 class="text-2xl font-medium mb-4">${item.name}</h2>
+            ${html}
+          </div>
+          `;
+        });
+      };
+
+      // animate scroll to top
+      document.getElementById("top").onclick = () => {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth",
+        });
+      };
+
+      document.getElementById("search").oninput = () => {
+        let keyword = document.getElementById("search").value;
+        let list = document.getElementsByClassName("announcement");
+        for (let i = 0; i < list.length; i++) {
+          let announcement = list[i];
+          if (
+            announcement
+              .getElementsByClassName("title")[0]
+              .innerHTML.includes(keyword)
+          ) {
+            announcement.style.display = "block";
+          } else {
+            announcement.style.display = "none";
+          }
+        }
+      };
+    </script>
+  </body>
+</html>

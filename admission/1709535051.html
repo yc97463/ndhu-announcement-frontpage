@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>第十六屆親善大使團團員招募</title>
+    <meta property="og:title" content="第十六屆親善大使團團員招募" />
+    <meta property="og:description" content="各位同學大家好：
+
+親善大使團第16屆新生二招來了！
+
+如果你/妳想要：
+●從外表妝容儀態到內在自信 (...more)" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          fontFamily: {
+            sans: '"Noto Sans TC", Arial, sans-serif',
+          },
+          container: {
+            padding: "1rem",
+            center: true,
+            screens: {
+              xl: "1024px",
+            },
+          },
+          extend: {
+            backgroundImage: {},
+            opacity: {
+              15: "0.15",
+            },
+          },
+        },
+      };
+    </script>
+    <style type="text/tailwindcss">
+      @layer utilities {
+        .content-auto {
+          content-visibility: auto;
+        }
+      }
+    </style>
+    <base href="https://announce.ndhu.edu.tw/" />
+  </head>
+  <body>
+    <div class="container my-6">
+      <h1 class="text-4xl font-medium mb-4">國立東華大學公告</h1>
+      <div id="article">
+        <div class="overflow-x-auto">
+            <p class="text-center text-gray-500 ">
+              如果內容無法正常顯示，請前往 <a href="https://announce.ndhu.edu.tw/mail_display.php?timestamp=1709535051">#1709535051</a> 查看。
+            </p>
+          </div>
+      </div>
+      <div class="border-2 border-slate-400 rounded-md my-4 p-3">
+        <h2 class="mb-1">
+          <span class="bg-sky-500/75 text-white py-[2px] px-[8px] mr-2 rounded-lg">#學務處課外活動組</span>第十六屆親善大使團團員招募
+          <svg
+            class="inline-block w-5 h-5 text-slate-500 hover:text-sky-500 cursor-pointer"
+            id="copy"
+            fill="currentColor"
+            viewBox="0 0 30 30"
+            xmlns="http://www.w3.org/2000/svg"
+            onclick="navigator.clipboard.writeText(window.location.href).then(()=>{alert('已複製連結')})"
+          >
+            <path d="M20 2H10c-1.103 0-2 .897-2 2v4H4c-1.103 0-2 .897-2 2v10c0 1.103.897 2 2 2h10c1.103 0 2-.897 2-2v-4h4c1.103 0 2-.897 2-2V4c0-1.103-.897-2-2-2zM4 20V10h10l.002 10H4zm16-6h-4v-4c0-1.103-.897-2-2-2h-4V4h10v10z"></path>
+          </svg>
+            
+        </h2>
+        <p>
+          <span id="date">2024/03/04 14:50</span>
+          <!-- a split dot style -->
+          <span class="text-slate-500">·</span>
+          <span id="category">招生公告</span>
+        </p>
+        <hr class="my-2" />
+        <div class="overflow-x-auto">
+          <pre>各位同學大家好：
+
+親善大使團第16屆新生二招來了！
+
+如果你/妳想要：
+●從外表妝容儀態到內在自信熱忱的提升
+●學會處理事務、與人應對進退之技巧和隨機應變的能力，增加個人競爭力
+●做有意義的事情獲取榮譽感
+●想要有一個團體或大家庭的歸屬感
+那麼你/妳就非常適合加入親善大使團喔！
+
+★二招說明會
+日期：113/3/8（五）
+時間：18:30-19:30
+地點：管院C135
+關於親善大使團的培訓課程、活動內容以及規範都會在說明會當天詳細告訴大家，同時會回應現場同學們的所有疑問！
+
+下列網址為16屆親善大使二招&amp;說明會報名表單，心動不如馬上行動！期待各位的加入！
+⬇️報名截止至113/3/10（日）
+<a href="https://forms.gle/NYWUhg5fwaquPBt88" target="_blank">https://forms.gle/NYWUhg5fwaquPBt88</a>
+
+有任何關於親善的問題，也都可以直接私訊ig小盒子，我們會為大家一一解惑。
+快來追蹤粉專掌握最新資訊
+🔍FB：國立東華親善大使團
+🔍IG：ndhufa
+親善大使的linktree：<a href="https://linktr.ee/ndhu_fa" target="_blank">https://linktr.ee/ndhu_fa</a>
+鎖定最新消息！
+
+
+課外活動組感謝您
+</pre>
+        </div>
+
+        <hr class="my-2" />
+
+        <h3 class="text-xl font-medium mb-2">附件</h3>
+        <ul id="attachments">
+            
+        </ul>
+      </div>
+    </div>
+
+    <script type="text/javascript">
+      let article = document.getElementById("article");
+
+      function countDays(date) {
+        let now = new Date();
+        let target = new Date(date);
+        let diff = now.getTime() - target.getTime();
+        let days = Math.floor(diff / (1000 * 60 * 60 * 24));
+
+        if (days <= 0) {
+          // return n minutes ago
+          let minutes = Math.floor(diff / (1000 * 60));
+          if (minutes <= 5) {
+            return "剛剛";
+          } else if (minutes <= 60) {
+            return `${minutes} 分鐘前`;
+          } else {
+            return `${Math.floor(minutes / 60)} 小時前`;
+          }
+        } else if (days == 1) {
+          return "昨天";
+        } else if (days == 2) {
+          return "前天";
+        } else {
+          return `${days} 天前`;
+        }
+      };
+
+      const content = `<div class="column1-unit">
+
+<!--  信件內容   -->
+<pre>分類： 活動公告, 招生公告
+來源： 學務處課外活動組 - 游雅筑 - pink389124@gms.ndhu.edu.tw - 電話8906236
+對象： 全校學生
+標題： 第十六屆親善大使團團員招募
+日期： Mon, 4 Mar 2024 14:50:51 +0800
+附檔： <a href="./message_7/1709535051/%E6%8B%9B%E7%94%9F%E8%AA%AA%E6%98%8E%E6%9C%83.jpg" target="_blank">招生說明會.jpg</a> (50 KB)   <a href="./message_7/1709535051/%E6%8B%9B%E5%8B%9F%E6%B5%B7%E5%A0%B1.png" target="_blank">招募海報.png</a> (187 KB)   <a href="./message_7/1709535051/%E5%AE%A3%E5%82%B3%E6%B5%B7%E5%A0%B1.png" target="_blank">宣傳海報.png</a> (527 KB)   </pre><hr class="clear-contentunit"/><pre>各位同學大家好：
+
+親善大使團第16屆新生二招來了！
+
+如果你/妳想要：
+●從外表妝容儀態到內在自信熱忱的提升
+●學會處理事務、與人應對進退之技巧和隨機應變的能力，增加個人競爭力
+●做有意義的事情獲取榮譽感
+●想要有一個團體或大家庭的歸屬感
+那麼你/妳就非常適合加入親善大使團喔！
+
+★二招說明會
+日期：113/3/8（五）
+時間：18:30-19:30
+地點：管院C135
+關於親善大使團的培訓課程、活動內容以及規範都會在說明會當天詳細告訴大家，同時會回應現場同學們的所有疑問！
+
+下列網址為16屆親善大使二招&amp;說明會報名表單，心動不如馬上行動！期待各位的加入！
+⬇️報名截止至113/3/10（日）
+<a href="https://forms.gle/NYWUhg5fwaquPBt88" target="_blank">https://forms.gle/NYWUhg5fwaquPBt88</a>
+
+有任何關於親善的問題，也都可以直接私訊ig小盒子，我們會為大家一一解惑。
+快來追蹤粉專掌握最新資訊
+🔍FB：國立東華親善大使團
+🔍IG：ndhufa
+親善大使的linktree：<a href="https://linktr.ee/ndhu_fa" target="_blank">https://linktr.ee/ndhu_fa</a>
+鎖定最新消息！
+
+
+課外活動組感謝您
+</pre><hr/>jpg、png、gif、pdf 附檔縮圖（pdf 只顯示第一頁）：<p></p><div style="text-align:center;display:inline-block;margin-right:20px;"><a href="./message_7/1709535051/%E6%8B%9B%E7%94%9F%E8%AA%AA%E6%98%8E%E6%9C%83.jpg" target="_blank"><img src="./thumb/1709535051_招生說明會.jpg"/></a><br/>招生說明會.jpg</div><div style="text-align:center;display:inline-block;margin-right:20px;"><a href="./message_7/1709535051/%E6%8B%9B%E5%8B%9F%E6%B5%B7%E5%A0%B1.png" target="_blank"><img src="./thumb/1709535051_招募海報.png"/></a><br/>招募海報.png</div><div style="text-align:center;display:inline-block;margin-right:20px;"><a href="./message_7/1709535051/%E5%AE%A3%E5%82%B3%E6%B5%B7%E5%A0%B1.png" target="_blank"><img src="./thumb/1709535051_宣傳海報.png"/></a><br/>宣傳海報.png</div>
+		
+</div>`;
+    
+      window.onload = () => {
+        // format publish time
+        const date = document.getElementById("date");
+        date.innerHTML = countDays(date.innerHTML);
+
+        // check attachments
+        let attachments = null;
+        try {
+          attachments = content
+            .split(`<hr class="clear-contentunit"/>`)[1]
+            .split(`<hr/>`)[1]
+            .split(`<p>`)[1];
+        } catch (e) {
+          attachments = `<li>無附件</li>`;
+        }
+        document.getElementById("attachments").innerHTML = attachments;
+      };
+
+    //   async function getArticle(timestamp) {
+    //     return await fetch(
+    //       `https://yc97463.github.io/ndhu-announcement/article/${timestamp}.json`
+    //     ).then((res) => res.json());
+    //   }
+    //   window.onload = async () => {
+    //     let host = window.location.host;
+
+    //     let timestamp = new URLSearchParams(window.location.search).get("id");
+    //     if (timestamp == null) {
+    //       window.location.href =
+    //         host != "yc97463.github.io"
+    //           ? "http://127.0.0.1:5500"
+    //           : "https://yc97463.github.io/ndhu-announcement-frontpage/";
+    //     }
+    //     let announcement = await getArticle(timestamp).then((res) => res[0]);
+    //     let attachments = null;
+    //     try {
+    //       attachments = announcement.content
+    //         .split(`<hr class="clear-contentunit"/>`)[1]
+    //         .split(`<hr/>`)[1]
+    //         .split(`<p>`)[1];
+    //     } catch (e) {
+    //       attachments = `<li>無附件</li>`;
+    //     }
+
+        // document.title = announcement.title;
+
+        // replace meta data title and description with announcement title and content
+        // document
+        //   .querySelector('meta[property="og:title"]')
+        //   .setAttribute("content", announcement.title);
+        // try {
+        //   document
+        //     .querySelector('meta[property="og:description"]')
+        //     .setAttribute(
+        //       "content",
+        //       announcement.content
+        //         .split(`<hr/>`)[0]
+        //         .split(`<pre>`)[2]
+        //         .split(`</pre>`)[0]
+        //     );
+        // } catch (e) {}
+
+    //     article.innerHTML = `
+    //       <div class="overflow-x-auto">
+    //         <p class="text-center text-gray-500 ">
+    //           如果內容無法正常顯示，請前往 <a href="https://announce.ndhu.edu.tw/mail_display.php?timestamp=${announcement.timestamp}">#${announcement.timestamp}</a> 查看。
+    //         </p>
+    //       </div>
+    //         `;
+    //     article.innerHTML += `
+    //       <div class="border-2 border-slate-400 rounded-md my-4 p-3">
+    //         <h2 class="mb-1">
+    //           <span class="bg-sky-500/75 text-white py-[2px] px-[8px] mr-2 rounded-lg">#${
+    //             announcement.department
+    //           }</span>${announcement.title}
+    //           <svg
+    //             class="inline-block w-5 h-5 text-slate-500 hover:text-sky-500 cursor-pointer"
+    //             id="copy"
+    //             fill="currentColor"
+    //             viewBox="0 0 30 30"
+    //             xmlns="http://www.w3.org/2000/svg"
+    //             onclick="navigator.clipboard.writeText('${
+    //               announcement.title
+    //             } '+window.location.href).then(()=>{alert('已複製連結')})"
+    //           >
+    //             <path d="M20 2H10c-1.103 0-2 .897-2 2v4H4c-1.103 0-2 .897-2 2v10c0 1.103.897 2 2 2h10c1.103 0 2-.897 2-2v-4h4c1.103 0 2-.897 2-2V4c0-1.103-.897-2-2-2zM4 20V10h10l.002 10H4zm16-6h-4v-4c0-1.103-.897-2-2-2h-4V4h10v10z"></path>
+    //           </svg>
+                
+    //         </h2>
+    //         <p>${countDays(announcement.date)}</p>
+    //         <hr class="my-2" />
+    //         <div class="overflow-x-auto">
+    //           ${
+    //             announcement.content
+    //               .split(`<hr class="clear-contentunit"/>`)[1]
+    //               .split(`<hr/>`)[0]
+    //           }
+    //         </div>
+
+    //         <hr class="my-2" />
+
+    //         <h3 class="text-xl font-medium mb-2">附件</h3>
+    //         <ul>
+    //           ${attachments}
+    //         </ul>
+    //       </div>
+    //       `;
+    //   };
+    </script>
+  </body>
+</html>

@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>📢造舟課說明會📢就是今天!快來參加「格稜蘭骨架蒙皮舟製作」課程說明會!</title>
+    <meta property="og:title" content="📢造舟課說明會📢就是今天!快來參加「格稜蘭骨架蒙皮舟製作」課程說明會!" />
+    <meta property="og:description" content="🚨就在今天！就在今天！🚨
+造舟課說明會就在今天!
+線上也可以參加說明會喲!
+快來聽大沐老師親自跟 (...more)" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          fontFamily: {
+            sans: '"Noto Sans TC", Arial, sans-serif',
+          },
+          container: {
+            padding: "1rem",
+            center: true,
+            screens: {
+              xl: "1024px",
+            },
+          },
+          extend: {
+            backgroundImage: {},
+            opacity: {
+              15: "0.15",
+            },
+          },
+        },
+      };
+    </script>
+    <style type="text/tailwindcss">
+      @layer utilities {
+        .content-auto {
+          content-visibility: auto;
+        }
+      }
+    </style>
+    <base href="https://announce.ndhu.edu.tw/" />
+  </head>
+  <body>
+    <div class="container my-6">
+      <h1 class="text-4xl font-medium mb-4">國立東華大學公告</h1>
+      <div id="article">
+        <div class="overflow-x-auto">
+            <p class="text-center text-gray-500 ">
+              如果內容無法正常顯示，請前往 <a href="https://announce.ndhu.edu.tw/mail_display.php?timestamp=1716168318">#1716168318</a> 查看。
+            </p>
+          </div>
+      </div>
+      <div class="border-2 border-slate-400 rounded-md my-4 p-3">
+        <h2 class="mb-1">
+          <span class="bg-sky-500/75 text-white py-[2px] px-[8px] mr-2 rounded-lg">#社會參與中心</span>📢造舟課說明會📢就是今天!快來參加「格稜蘭骨架蒙皮舟製作」課程說明會!
+          <svg
+            class="inline-block w-5 h-5 text-slate-500 hover:text-sky-500 cursor-pointer"
+            id="copy"
+            fill="currentColor"
+            viewBox="0 0 30 30"
+            xmlns="http://www.w3.org/2000/svg"
+            onclick="navigator.clipboard.writeText(window.location.href).then(()=>{alert('已複製連結')})"
+          >
+            <path d="M20 2H10c-1.103 0-2 .897-2 2v4H4c-1.103 0-2 .897-2 2v10c0 1.103.897 2 2 2h10c1.103 0 2-.897 2-2v-4h4c1.103 0 2-.897 2-2V4c0-1.103-.897-2-2-2zM4 20V10h10l.002 10H4zm16-6h-4v-4c0-1.103-.897-2-2-2h-4V4h10v10z"></path>
+          </svg>
+            
+        </h2>
+        <p>
+          <span id="date">2024/05/20 09:25</span>
+          <!-- a split dot style -->
+          <span class="text-slate-500">·</span>
+          <span id="category">課程公告</span>
+        </p>
+        <hr class="my-2" />
+        <div class="overflow-x-auto">
+          <pre>🚨就在今天！就在今天！🚨
+造舟課說明會就在今天!
+線上也可以參加說明會喲!
+快來聽大沐老師親自跟你說~~
+
+🚣從無到有，鋸木造舟，乘風破浪！體驗獨木舟，享受徜徉在水上的樂趣，是否你對造舟有極大的興趣？歡迎你/妳來報名！
+
+本課程以工作坊方式並採密集上課方式，共3學分54小時，想親自動手製作獨木舟，並下水體驗水上樂趣之同學，從DIY到DIT，Do it together，造舟不是一人之事，需集眾人之力方能完成造舟不是個人秀，在團隊合作中，體會挫折、包容與成長的重要，歡迎同學來選課。
+
+授課老師：溫志榮／通識教育中心兼任教師
+上課時間：113年5 月20日(一)
+活動時間：中午12：10~13：30
+實體地點：洄瀾學院C102教室
+線上網址：<a href="https://meet.google.com/cwd-zzzh-gaf" target="_blank">https://meet.google.com/cwd-zzzh-gaf</a>
+歡迎踴躍參加~
+
+                         通識教育中心  敬啟</pre>
+        </div>
+
+        <hr class="my-2" />
+
+        <h3 class="text-xl font-medium mb-2">附件</h3>
+        <ul id="attachments">
+            
+        </ul>
+      </div>
+    </div>
+
+    <script type="text/javascript">
+      let article = document.getElementById("article");
+
+      function countDays(date) {
+        let now = new Date();
+        let target = new Date(date);
+        let diff = now.getTime() - target.getTime();
+        let days = Math.floor(diff / (1000 * 60 * 60 * 24));
+
+        if (days <= 0) {
+          // return n minutes ago
+          let minutes = Math.floor(diff / (1000 * 60));
+          if (minutes <= 5) {
+            return "剛剛";
+          } else if (minutes <= 60) {
+            return `${minutes} 分鐘前`;
+          } else {
+            return `${Math.floor(minutes / 60)} 小時前`;
+          }
+        } else if (days == 1) {
+          return "昨天";
+        } else if (days == 2) {
+          return "前天";
+        } else {
+          return `${days} 天前`;
+        }
+      };
+
+      const content = `<div class="column1-unit">
+
+<!--  信件內容   -->
+<pre>分類： 課程公告, 招生公告
+來源： 社會參與中心 - 徐小姐 - hsu-pangju@gms.ndhu.edu.tw - 電話5247
+對象： 全校教職員_全校教師_全校學生_兼任教師
+標題： 📢造舟課說明會📢就是今天!快來參加「格稜蘭骨架蒙皮舟製作」課程說明會!
+日期： Mon, 20 May 2024 09:25:18 +0800
+附檔： <a href="./message_7/1716168318/%E7%94%9F%E5%91%BD%E9%80%A0%E8%88%9F.jpg" target="_blank">生命造舟.jpg</a> (254 KB)   <a href="./message_7/1716168318/%E9%80%9A%E8%AD%98-%E9%80%A0%E8%88%9F%E8%AA%B2%E7%A8%8B-%E8%AA%B2%E7%A8%8B%E8%AA%AA%E6%98%8E113-1.pdf" target="_blank">通識-造舟課程-課程說明113-1.pdf</a> (315 KB)   </pre><hr class="clear-contentunit"/><pre>🚨就在今天！就在今天！🚨
+造舟課說明會就在今天!
+線上也可以參加說明會喲!
+快來聽大沐老師親自跟你說~~
+
+🚣從無到有，鋸木造舟，乘風破浪！體驗獨木舟，享受徜徉在水上的樂趣，是否你對造舟有極大的興趣？歡迎你/妳來報名！
+
+本課程以工作坊方式並採密集上課方式，共3學分54小時，想親自動手製作獨木舟，並下水體驗水上樂趣之同學，從DIY到DIT，Do it together，造舟不是一人之事，需集眾人之力方能完成造舟不是個人秀，在團隊合作中，體會挫折、包容與成長的重要，歡迎同學來選課。
+
+授課老師：溫志榮／通識教育中心兼任教師
+上課時間：113年5 月20日(一)
+活動時間：中午12：10~13：30
+實體地點：洄瀾學院C102教室
+線上網址：<a href="https://meet.google.com/cwd-zzzh-gaf" target="_blank">https://meet.google.com/cwd-zzzh-gaf</a>
+歡迎踴躍參加~
+
+                         通識教育中心  敬啟</pre><hr/>jpg、png、gif、pdf 附檔縮圖（pdf 只顯示第一頁）：<p></p><div style="text-align:center;display:inline-block;margin-right:20px;"><a href="./message_7/1716168318/%E7%94%9F%E5%91%BD%E9%80%A0%E8%88%9F.jpg" target="_blank"><img src="./thumb/1716168318_生命造舟.jpg"/></a><br/>生命造舟.jpg</div><div style="text-align:center;display:inline-block;margin-right:20px;"><a href="./message_7/1716168318/%E9%80%9A%E8%AD%98-%E9%80%A0%E8%88%9F%E8%AA%B2%E7%A8%8B-%E8%AA%B2%E7%A8%8B%E8%AA%AA%E6%98%8E113-1.pdf" target="_blank"><img src="./thumb/1716168318_通識-造舟課程-課程說明113-1.pdf.jpg"/></a><br/>通識-造舟課程-課程說明113-1.pdf</div>
+		
+</div>`;
+    
+      window.onload = () => {
+        // format publish time
+        const date = document.getElementById("date");
+        date.innerHTML = countDays(date.innerHTML);
+
+        // check attachments
+        let attachments = null;
+        try {
+          attachments = content
+            .split(`<hr class="clear-contentunit"/>`)[1]
+            .split(`<hr/>`)[1]
+            .split(`<p>`)[1];
+        } catch (e) {
+          attachments = `<li>無附件</li>`;
+        }
+        document.getElementById("attachments").innerHTML = attachments;
+      };
+
+    //   async function getArticle(timestamp) {
+    //     return await fetch(
+    //       `https://yc97463.github.io/ndhu-announcement/article/${timestamp}.json`
+    //     ).then((res) => res.json());
+    //   }
+    //   window.onload = async () => {
+    //     let host = window.location.host;
+
+    //     let timestamp = new URLSearchParams(window.location.search).get("id");
+    //     if (timestamp == null) {
+    //       window.location.href =
+    //         host != "yc97463.github.io"
+    //           ? "http://127.0.0.1:5500"
+    //           : "https://yc97463.github.io/ndhu-announcement-frontpage/";
+    //     }
+    //     let announcement = await getArticle(timestamp).then((res) => res[0]);
+    //     let attachments = null;
+    //     try {
+    //       attachments = announcement.content
+    //         .split(`<hr class="clear-contentunit"/>`)[1]
+    //         .split(`<hr/>`)[1]
+    //         .split(`<p>`)[1];
+    //     } catch (e) {
+    //       attachments = `<li>無附件</li>`;
+    //     }
+
+        // document.title = announcement.title;
+
+        // replace meta data title and description with announcement title and content
+        // document
+        //   .querySelector('meta[property="og:title"]')
+        //   .setAttribute("content", announcement.title);
+        // try {
+        //   document
+        //     .querySelector('meta[property="og:description"]')
+        //     .setAttribute(
+        //       "content",
+        //       announcement.content
+        //         .split(`<hr/>`)[0]
+        //         .split(`<pre>`)[2]
+        //         .split(`</pre>`)[0]
+        //     );
+        // } catch (e) {}
+
+    //     article.innerHTML = `
+    //       <div class="overflow-x-auto">
+    //         <p class="text-center text-gray-500 ">
+    //           如果內容無法正常顯示，請前往 <a href="https://announce.ndhu.edu.tw/mail_display.php?timestamp=${announcement.timestamp}">#${announcement.timestamp}</a> 查看。
+    //         </p>
+    //       </div>
+    //         `;
+    //     article.innerHTML += `
+    //       <div class="border-2 border-slate-400 rounded-md my-4 p-3">
+    //         <h2 class="mb-1">
+    //           <span class="bg-sky-500/75 text-white py-[2px] px-[8px] mr-2 rounded-lg">#${
+    //             announcement.department
+    //           }</span>${announcement.title}
+    //           <svg
+    //             class="inline-block w-5 h-5 text-slate-500 hover:text-sky-500 cursor-pointer"
+    //             id="copy"
+    //             fill="currentColor"
+    //             viewBox="0 0 30 30"
+    //             xmlns="http://www.w3.org/2000/svg"
+    //             onclick="navigator.clipboard.writeText('${
+    //               announcement.title
+    //             } '+window.location.href).then(()=>{alert('已複製連結')})"
+    //           >
+    //             <path d="M20 2H10c-1.103 0-2 .897-2 2v4H4c-1.103 0-2 .897-2 2v10c0 1.103.897 2 2 2h10c1.103 0 2-.897 2-2v-4h4c1.103 0 2-.897 2-2V4c0-1.103-.897-2-2-2zM4 20V10h10l.002 10H4zm16-6h-4v-4c0-1.103-.897-2-2-2h-4V4h10v10z"></path>
+    //           </svg>
+                
+    //         </h2>
+    //         <p>${countDays(announcement.date)}</p>
+    //         <hr class="my-2" />
+    //         <div class="overflow-x-auto">
+    //           ${
+    //             announcement.content
+    //               .split(`<hr class="clear-contentunit"/>`)[1]
+    //               .split(`<hr/>`)[0]
+    //           }
+    //         </div>
+
+    //         <hr class="my-2" />
+
+    //         <h3 class="text-xl font-medium mb-2">附件</h3>
+    //         <ul>
+    //           ${attachments}
+    //         </ul>
+    //       </div>
+    //       `;
+    //   };
+    </script>
+  </body>
+</html>

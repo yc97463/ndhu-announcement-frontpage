@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>【新創大學堂】五月等你來報名！</title>
+    <meta property="og:title" content="【新創大學堂】五月等你來報名！" />
+    <meta property="og:description" content="📅 05/03(五) 10:00-16:30
+《文案力基本訓練工作坊》
+發揮文案魔力，掌握6W1H (...more)" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          fontFamily: {
+            sans: '"Noto Sans TC", Arial, sans-serif',
+          },
+          container: {
+            padding: "1rem",
+            center: true,
+            screens: {
+              xl: "1024px",
+            },
+          },
+          extend: {
+            backgroundImage: {},
+            opacity: {
+              15: "0.15",
+            },
+          },
+        },
+      };
+    </script>
+    <style type="text/tailwindcss">
+      @layer utilities {
+        .content-auto {
+          content-visibility: auto;
+        }
+      }
+    </style>
+    <base href="https://announce.ndhu.edu.tw/" />
+  </head>
+  <body>
+    <div class="container my-6">
+      <h1 class="text-4xl font-medium mb-4">國立東華大學公告</h1>
+      <div id="article">
+        <div class="overflow-x-auto">
+            <p class="text-center text-gray-500 ">
+              如果內容無法正常顯示，請前往 <a href="https://announce.ndhu.edu.tw/mail_display.php?timestamp=1714315225">#1714315225</a> 查看。
+            </p>
+          </div>
+      </div>
+      <div class="border-2 border-slate-400 rounded-md my-4 p-3">
+        <h2 class="mb-1">
+          <span class="bg-sky-500/75 text-white py-[2px] px-[8px] mr-2 rounded-lg">#研發處創新育成中心</span>【新創大學堂】五月等你來報名！
+          <svg
+            class="inline-block w-5 h-5 text-slate-500 hover:text-sky-500 cursor-pointer"
+            id="copy"
+            fill="currentColor"
+            viewBox="0 0 30 30"
+            xmlns="http://www.w3.org/2000/svg"
+            onclick="navigator.clipboard.writeText(window.location.href).then(()=>{alert('已複製連結')})"
+          >
+            <path d="M20 2H10c-1.103 0-2 .897-2 2v4H4c-1.103 0-2 .897-2 2v10c0 1.103.897 2 2 2h10c1.103 0 2-.897 2-2v-4h4c1.103 0 2-.897 2-2V4c0-1.103-.897-2-2-2zM4 20V10h10l.002 10H4zm16-6h-4v-4c0-1.103-.897-2-2-2h-4V4h10v10z"></path>
+          </svg>
+            
+        </h2>
+        <p>
+          <span id="date">2024/04/28 22:40</span>
+          <!-- a split dot style -->
+          <span class="text-slate-500">·</span>
+          <span id="category">研討會</span>
+        </p>
+        <hr class="my-2" />
+        <div class="overflow-x-auto">
+          <pre>📅 05/03(五) 10:00-16:30
+《文案力基本訓練工作坊》
+發揮文案魔力，掌握6W1H策略！
+講師｜創意總監那口井(范綱任)
+
+📅 05/11(六) 13:30-16:30
+《OKR實戰工作坊》
+學OKR設定與實作，邁向成功之路！
+講師｜顧問公司創辦人林懿庭
+
+📅 05/24(五) 13:30-16:30
+《邊吃 邊玩 邊賺錢?
+ 你所不知的部落客秘辛》
+揭秘部落客秘辛，多平台經營技巧大公開！
+講師｜部落客卡夫卡愛旅行(林家楷)
+
+立即報名，不容錯過！
+🔗<a href="http://ydc.org.tw/" target="_blank">http://ydc.org.tw/</a>
+📍地點： 花蓮新創基地（花蓮市海岸路17號）
+
+⚠️名額有限，把握機會
+⚠️課程為工作坊型態無線上直播</pre>
+        </div>
+
+        <hr class="my-2" />
+
+        <h3 class="text-xl font-medium mb-2">附件</h3>
+        <ul id="attachments">
+            
+        </ul>
+      </div>
+    </div>
+
+    <script type="text/javascript">
+      let article = document.getElementById("article");
+
+      function countDays(date) {
+        let now = new Date();
+        let target = new Date(date);
+        let diff = now.getTime() - target.getTime();
+        let days = Math.floor(diff / (1000 * 60 * 60 * 24));
+
+        if (days <= 0) {
+          // return n minutes ago
+          let minutes = Math.floor(diff / (1000 * 60));
+          if (minutes <= 5) {
+            return "剛剛";
+          } else if (minutes <= 60) {
+            return `${minutes} 分鐘前`;
+          } else {
+            return `${Math.floor(minutes / 60)} 小時前`;
+          }
+        } else if (days == 1) {
+          return "昨天";
+        } else if (days == 2) {
+          return "前天";
+        } else {
+          return `${days} 天前`;
+        }
+      };
+
+      const content = `<div class="column1-unit">
+
+<!--  信件內容   -->
+<pre>分類： 活動公告, 演講暨研討會, 其他公告
+來源： 研發處創新育成中心 - 吳其璁 - dci93031@gms.ndhu.edu.tw - 電話03-8903687
+對象： 全校教職員_全校教師_全校職員_全校學生_休學學生_兼任教師_退休教職員_教職員眷屬
+標題： 【新創大學堂】五月等你來報名！
+日期： Sun, 28 Apr 2024 22:40:25 +0800
+附檔： <a href="./message_7/1714315225/%E4%BA%94%E6%9C%88%E6%B4%BB%E5%8B%95.jpg" target="_blank">五月活動.jpg</a> (173 KB)   </pre><hr class="clear-contentunit"/><pre>📅 05/03(五) 10:00-16:30
+《文案力基本訓練工作坊》
+發揮文案魔力，掌握6W1H策略！
+講師｜創意總監那口井(范綱任)
+
+📅 05/11(六) 13:30-16:30
+《OKR實戰工作坊》
+學OKR設定與實作，邁向成功之路！
+講師｜顧問公司創辦人林懿庭
+
+📅 05/24(五) 13:30-16:30
+《邊吃 邊玩 邊賺錢?
+ 你所不知的部落客秘辛》
+揭秘部落客秘辛，多平台經營技巧大公開！
+講師｜部落客卡夫卡愛旅行(林家楷)
+
+立即報名，不容錯過！
+🔗<a href="http://ydc.org.tw/" target="_blank">http://ydc.org.tw/</a>
+📍地點： 花蓮新創基地（花蓮市海岸路17號）
+
+⚠️名額有限，把握機會
+⚠️課程為工作坊型態無線上直播</pre><hr/>jpg、png、gif、pdf 附檔縮圖（pdf 只顯示第一頁）：<p></p><div style="text-align:center;display:inline-block;margin-right:20px;"><a href="./message_7/1714315225/%E4%BA%94%E6%9C%88%E6%B4%BB%E5%8B%95.jpg" target="_blank"><img src="./thumb/1714315225_五月活動.jpg"/></a><br/>五月活動.jpg</div>
+		
+</div>`;
+    
+      window.onload = () => {
+        // format publish time
+        const date = document.getElementById("date");
+        date.innerHTML = countDays(date.innerHTML);
+
+        // check attachments
+        let attachments = null;
+        try {
+          attachments = content
+            .split(`<hr class="clear-contentunit"/>`)[1]
+            .split(`<hr/>`)[1]
+            .split(`<p>`)[1];
+        } catch (e) {
+          attachments = `<li>無附件</li>`;
+        }
+        document.getElementById("attachments").innerHTML = attachments;
+      };
+
+    //   async function getArticle(timestamp) {
+    //     return await fetch(
+    //       `https://yc97463.github.io/ndhu-announcement/article/${timestamp}.json`
+    //     ).then((res) => res.json());
+    //   }
+    //   window.onload = async () => {
+    //     let host = window.location.host;
+
+    //     let timestamp = new URLSearchParams(window.location.search).get("id");
+    //     if (timestamp == null) {
+    //       window.location.href =
+    //         host != "yc97463.github.io"
+    //           ? "http://127.0.0.1:5500"
+    //           : "https://yc97463.github.io/ndhu-announcement-frontpage/";
+    //     }
+    //     let announcement = await getArticle(timestamp).then((res) => res[0]);
+    //     let attachments = null;
+    //     try {
+    //       attachments = announcement.content
+    //         .split(`<hr class="clear-contentunit"/>`)[1]
+    //         .split(`<hr/>`)[1]
+    //         .split(`<p>`)[1];
+    //     } catch (e) {
+    //       attachments = `<li>無附件</li>`;
+    //     }
+
+        // document.title = announcement.title;
+
+        // replace meta data title and description with announcement title and content
+        // document
+        //   .querySelector('meta[property="og:title"]')
+        //   .setAttribute("content", announcement.title);
+        // try {
+        //   document
+        //     .querySelector('meta[property="og:description"]')
+        //     .setAttribute(
+        //       "content",
+        //       announcement.content
+        //         .split(`<hr/>`)[0]
+        //         .split(`<pre>`)[2]
+        //         .split(`</pre>`)[0]
+        //     );
+        // } catch (e) {}
+
+    //     article.innerHTML = `
+    //       <div class="overflow-x-auto">
+    //         <p class="text-center text-gray-500 ">
+    //           如果內容無法正常顯示，請前往 <a href="https://announce.ndhu.edu.tw/mail_display.php?timestamp=${announcement.timestamp}">#${announcement.timestamp}</a> 查看。
+    //         </p>
+    //       </div>
+    //         `;
+    //     article.innerHTML += `
+    //       <div class="border-2 border-slate-400 rounded-md my-4 p-3">
+    //         <h2 class="mb-1">
+    //           <span class="bg-sky-500/75 text-white py-[2px] px-[8px] mr-2 rounded-lg">#${
+    //             announcement.department
+    //           }</span>${announcement.title}
+    //           <svg
+    //             class="inline-block w-5 h-5 text-slate-500 hover:text-sky-500 cursor-pointer"
+    //             id="copy"
+    //             fill="currentColor"
+    //             viewBox="0 0 30 30"
+    //             xmlns="http://www.w3.org/2000/svg"
+    //             onclick="navigator.clipboard.writeText('${
+    //               announcement.title
+    //             } '+window.location.href).then(()=>{alert('已複製連結')})"
+    //           >
+    //             <path d="M20 2H10c-1.103 0-2 .897-2 2v4H4c-1.103 0-2 .897-2 2v10c0 1.103.897 2 2 2h10c1.103 0 2-.897 2-2v-4h4c1.103 0 2-.897 2-2V4c0-1.103-.897-2-2-2zM4 20V10h10l.002 10H4zm16-6h-4v-4c0-1.103-.897-2-2-2h-4V4h10v10z"></path>
+    //           </svg>
+                
+    //         </h2>
+    //         <p>${countDays(announcement.date)}</p>
+    //         <hr class="my-2" />
+    //         <div class="overflow-x-auto">
+    //           ${
+    //             announcement.content
+    //               .split(`<hr class="clear-contentunit"/>`)[1]
+    //               .split(`<hr/>`)[0]
+    //           }
+    //         </div>
+
+    //         <hr class="my-2" />
+
+    //         <h3 class="text-xl font-medium mb-2">附件</h3>
+    //         <ul>
+    //           ${attachments}
+    //         </ul>
+    //       </div>
+    //       `;
+    //   };
+    </script>
+  </body>
+</html>

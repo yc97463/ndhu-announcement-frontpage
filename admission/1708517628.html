@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>中等教育學程 報名公告</title>
+    <meta property="og:title" content="中等教育學程 報名公告" />
+    <meta property="og:description" content="各位同學們您好：
+
+若想成為師資生，對教育學程課程有興趣者，
+師資培育中心【中等教育學程】開放網路報 (...more)" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          fontFamily: {
+            sans: '"Noto Sans TC", Arial, sans-serif',
+          },
+          container: {
+            padding: "1rem",
+            center: true,
+            screens: {
+              xl: "1024px",
+            },
+          },
+          extend: {
+            backgroundImage: {},
+            opacity: {
+              15: "0.15",
+            },
+          },
+        },
+      };
+    </script>
+    <style type="text/tailwindcss">
+      @layer utilities {
+        .content-auto {
+          content-visibility: auto;
+        }
+      }
+    </style>
+    <base href="https://announce.ndhu.edu.tw/" />
+  </head>
+  <body>
+    <div class="container my-6">
+      <h1 class="text-4xl font-medium mb-4">國立東華大學公告</h1>
+      <div id="article">
+        <div class="overflow-x-auto">
+            <p class="text-center text-gray-500 ">
+              如果內容無法正常顯示，請前往 <a href="https://announce.ndhu.edu.tw/mail_display.php?timestamp=1708517628">#1708517628</a> 查看。
+            </p>
+          </div>
+      </div>
+      <div class="border-2 border-slate-400 rounded-md my-4 p-3">
+        <h2 class="mb-1">
+          <span class="bg-sky-500/75 text-white py-[2px] px-[8px] mr-2 rounded-lg">#師資培育中心</span>中等教育學程 報名公告
+          <svg
+            class="inline-block w-5 h-5 text-slate-500 hover:text-sky-500 cursor-pointer"
+            id="copy"
+            fill="currentColor"
+            viewBox="0 0 30 30"
+            xmlns="http://www.w3.org/2000/svg"
+            onclick="navigator.clipboard.writeText(window.location.href).then(()=>{alert('已複製連結')})"
+          >
+            <path d="M20 2H10c-1.103 0-2 .897-2 2v4H4c-1.103 0-2 .897-2 2v10c0 1.103.897 2 2 2h10c1.103 0 2-.897 2-2v-4h4c1.103 0 2-.897 2-2V4c0-1.103-.897-2-2-2zM4 20V10h10l.002 10H4zm16-6h-4v-4c0-1.103-.897-2-2-2h-4V4h10v10z"></path>
+          </svg>
+            
+        </h2>
+        <p>
+          <span id="date">2024/02/21 20:13</span>
+          <!-- a split dot style -->
+          <span class="text-slate-500">·</span>
+          <span id="category">招生公告</span>
+        </p>
+        <hr class="my-2" />
+        <div class="overflow-x-auto">
+          <pre>各位同學們您好：
+
+若想成為師資生，對教育學程課程有興趣者，
+師資培育中心【中等教育學程】開放網路報名至3月10日截止喔，
+請把握時間先上網報名。
+
+1.中等教育學程申請報名請由線上申請，至師培中心網站登錄即可，
+  逾時將無法登錄。<a href="http://web.ndhu.edu.tw/StudentEducation/" target="_blank">http://web.ndhu.edu.tw/StudentEducation/</a>
+
+2.113學年度甄試簡章可至師培中心網站～「中等學程組」～
+「中等學程招生訊息」下載：
+<a href="https://littletree.ndhu.edu.tw/p/412-1023-1304.php?Lang=zh-tw" target="_blank">https://littletree.ndhu.edu.tw/p/412-1023-1304.php?Lang=zh-tw</a>
+
+3.申請資格：
+◎ 學士：前一學期學業成績總平均為全班前50％者，除附上成績單外，需申請名次排名。
+◎ 碩、博士：前一學期學業總成績七十五分以上。
+
+4.實體招生說明會：訂於3/7(週四) 12:10~13:30 教育學院A109講堂。
+線上說明會：2/22(四)、2/23(五) 中午
+<a href="https://meet.google.com/psr-ssit-ktp" target="_blank">https://meet.google.com/psr-ssit-ktp</a> 
+
+5.如有報名上的問題，也可來電詢問。
+電話：（03）890-6632 羅婉菁小姐
+</pre>
+		
+</div>
+        </div>
+
+        <hr class="my-2" />
+
+        <h3 class="text-xl font-medium mb-2">附件</h3>
+        <ul id="attachments">
+            
+        </ul>
+      </div>
+    </div>
+
+    <script type="text/javascript">
+      let article = document.getElementById("article");
+
+      function countDays(date) {
+        let now = new Date();
+        let target = new Date(date);
+        let diff = now.getTime() - target.getTime();
+        let days = Math.floor(diff / (1000 * 60 * 60 * 24));
+
+        if (days <= 0) {
+          // return n minutes ago
+          let minutes = Math.floor(diff / (1000 * 60));
+          if (minutes <= 5) {
+            return "剛剛";
+          } else if (minutes <= 60) {
+            return `${minutes} 分鐘前`;
+          } else {
+            return `${Math.floor(minutes / 60)} 小時前`;
+          }
+        } else if (days == 1) {
+          return "昨天";
+        } else if (days == 2) {
+          return "前天";
+        } else {
+          return `${days} 天前`;
+        }
+      };
+
+      const content = `<div class="column1-unit">
+
+<!--  信件內容   -->
+<pre>分類： 招生公告
+來源： 師資培育中心 - 中等學程組 - amylo@gms.ndhu.edu.tw - 電話(03)890-6632
+對象： 全校學生_大一_大二_大三_大四以上_碩士生_博士生_休學學生
+標題： 中等教育學程 報名公告
+日期： Wed, 21 Feb 2024 20:13:48 +0800
+</pre><hr class="clear-contentunit"/><pre>各位同學們您好：
+
+若想成為師資生，對教育學程課程有興趣者，
+師資培育中心【中等教育學程】開放網路報名至3月10日截止喔，
+請把握時間先上網報名。
+
+1.中等教育學程申請報名請由線上申請，至師培中心網站登錄即可，
+  逾時將無法登錄。<a href="http://web.ndhu.edu.tw/StudentEducation/" target="_blank">http://web.ndhu.edu.tw/StudentEducation/</a>
+
+2.113學年度甄試簡章可至師培中心網站～「中等學程組」～
+「中等學程招生訊息」下載：
+<a href="https://littletree.ndhu.edu.tw/p/412-1023-1304.php?Lang=zh-tw" target="_blank">https://littletree.ndhu.edu.tw/p/412-1023-1304.php?Lang=zh-tw</a>
+
+3.申請資格：
+◎ 學士：前一學期學業成績總平均為全班前50％者，除附上成績單外，需申請名次排名。
+◎ 碩、博士：前一學期學業總成績七十五分以上。
+
+4.實體招生說明會：訂於3/7(週四) 12:10~13:30 教育學院A109講堂。
+線上說明會：2/22(四)、2/23(五) 中午
+<a href="https://meet.google.com/psr-ssit-ktp" target="_blank">https://meet.google.com/psr-ssit-ktp</a> 
+
+5.如有報名上的問題，也可來電詢問。
+電話：（03）890-6632 羅婉菁小姐
+</pre>
+		
+</div>`;
+    
+      window.onload = () => {
+        // format publish time
+        const date = document.getElementById("date");
+        date.innerHTML = countDays(date.innerHTML);
+
+        // check attachments
+        let attachments = null;
+        try {
+          attachments = content
+            .split(`<hr class="clear-contentunit"/>`)[1]
+            .split(`<hr/>`)[1]
+            .split(`<p>`)[1];
+        } catch (e) {
+          attachments = `<li>無附件</li>`;
+        }
+        document.getElementById("attachments").innerHTML = attachments;
+      };
+
+    //   async function getArticle(timestamp) {
+    //     return await fetch(
+    //       `https://yc97463.github.io/ndhu-announcement/article/${timestamp}.json`
+    //     ).then((res) => res.json());
+    //   }
+    //   window.onload = async () => {
+    //     let host = window.location.host;
+
+    //     let timestamp = new URLSearchParams(window.location.search).get("id");
+    //     if (timestamp == null) {
+    //       window.location.href =
+    //         host != "yc97463.github.io"
+    //           ? "http://127.0.0.1:5500"
+    //           : "https://yc97463.github.io/ndhu-announcement-frontpage/";
+    //     }
+    //     let announcement = await getArticle(timestamp).then((res) => res[0]);
+    //     let attachments = null;
+    //     try {
+    //       attachments = announcement.content
+    //         .split(`<hr class="clear-contentunit"/>`)[1]
+    //         .split(`<hr/>`)[1]
+    //         .split(`<p>`)[1];
+    //     } catch (e) {
+    //       attachments = `<li>無附件</li>`;
+    //     }
+
+        // document.title = announcement.title;
+
+        // replace meta data title and description with announcement title and content
+        // document
+        //   .querySelector('meta[property="og:title"]')
+        //   .setAttribute("content", announcement.title);
+        // try {
+        //   document
+        //     .querySelector('meta[property="og:description"]')
+        //     .setAttribute(
+        //       "content",
+        //       announcement.content
+        //         .split(`<hr/>`)[0]
+        //         .split(`<pre>`)[2]
+        //         .split(`</pre>`)[0]
+        //     );
+        // } catch (e) {}
+
+    //     article.innerHTML = `
+    //       <div class="overflow-x-auto">
+    //         <p class="text-center text-gray-500 ">
+    //           如果內容無法正常顯示，請前往 <a href="https://announce.ndhu.edu.tw/mail_display.php?timestamp=${announcement.timestamp}">#${announcement.timestamp}</a> 查看。
+    //         </p>
+    //       </div>
+    //         `;
+    //     article.innerHTML += `
+    //       <div class="border-2 border-slate-400 rounded-md my-4 p-3">
+    //         <h2 class="mb-1">
+    //           <span class="bg-sky-500/75 text-white py-[2px] px-[8px] mr-2 rounded-lg">#${
+    //             announcement.department
+    //           }</span>${announcement.title}
+    //           <svg
+    //             class="inline-block w-5 h-5 text-slate-500 hover:text-sky-500 cursor-pointer"
+    //             id="copy"
+    //             fill="currentColor"
+    //             viewBox="0 0 30 30"
+    //             xmlns="http://www.w3.org/2000/svg"
+    //             onclick="navigator.clipboard.writeText('${
+    //               announcement.title
+    //             } '+window.location.href).then(()=>{alert('已複製連結')})"
+    //           >
+    //             <path d="M20 2H10c-1.103 0-2 .897-2 2v4H4c-1.103 0-2 .897-2 2v10c0 1.103.897 2 2 2h10c1.103 0 2-.897 2-2v-4h4c1.103 0 2-.897 2-2V4c0-1.103-.897-2-2-2zM4 20V10h10l.002 10H4zm16-6h-4v-4c0-1.103-.897-2-2-2h-4V4h10v10z"></path>
+    //           </svg>
+                
+    //         </h2>
+    //         <p>${countDays(announcement.date)}</p>
+    //         <hr class="my-2" />
+    //         <div class="overflow-x-auto">
+    //           ${
+    //             announcement.content
+    //               .split(`<hr class="clear-contentunit"/>`)[1]
+    //               .split(`<hr/>`)[0]
+    //           }
+    //         </div>
+
+    //         <hr class="my-2" />
+
+    //         <h3 class="text-xl font-medium mb-2">附件</h3>
+    //         <ul>
+    //           ${attachments}
+    //         </ul>
+    //       </div>
+    //       `;
+    //   };
+    </script>
+  </body>
+</html>
