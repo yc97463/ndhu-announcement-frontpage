@@ -6,7 +6,7 @@ on:
   pull_request:
     branches: [main]
   schedule:
-    - cron: "5/35 * * * *" # Every 30 minutes, run after API crawler job
+    - cron: "15/45 * * * *" # Every 30 minutes, run after API crawler job
   workflow_dispatch:
 
 jobs:
