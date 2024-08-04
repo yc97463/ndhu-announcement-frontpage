@@ -2,8 +2,12 @@ name: Build and Deploy
 
 on:
   push:
-    branches:
-      - main
+    branches: [main]
+  pull_request:
+    branches: [main]
+  schedule:
+    - cron: "5/35 * * * *" # Every 30 minutes, run after API crawler job
+  workflow_dispatch:
 
 jobs:
   build:
