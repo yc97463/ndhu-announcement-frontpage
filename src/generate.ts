@@ -127,8 +127,10 @@ async function createOGImageForNewsItem(newsItem: News, outputDir: string): Prom
 function checkAttachment(content: string): boolean {
     try {
         const parts = content.split('<hr class="clear-contentunit"/>');
-        const innerContent = parts[1].split('<hr/>')[1];
-        return innerContent.includes('/thumb/');
+        if (parts.length < 2) return false;
+        const innerContent = parts[1].split('<hr/>');
+        if (innerContent.length < 2) return false;
+        return innerContent[1].includes('/thumb/');
     } catch (error) {
         console.error('Error processing content for attachment', error);
         return false;
