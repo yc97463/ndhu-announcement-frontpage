@@ -15,6 +15,7 @@ interface News {
     content: string;
     category: string;
     ogImage: string;
+    hasAttachment: boolean;
 }
 
 const baseUrl = 'https://raw.githubusercontent.com/yc97463/ndhu-announcement/gh-pages';
@@ -123,6 +124,17 @@ async function createOGImageForNewsItem(newsItem: News, outputDir: string): Prom
     }
 }
 
+function checkAttachment(content: string): boolean {
+    try {
+        const parts = content.split('<hr class="clear-contentunit"/>');
+        const innerContent = parts[1].split('<hr/>')[1];
+        return innerContent.includes('/thumb/');
+    } catch (error) {
+        console.error('Error processing content for attachment', error);
+        return false;
+    }
+}
+
 category.map(async (item) => {
     console.log(`Generating ${item.name}...`);
     if (item.id === 0) {
@@ -161,6 +173,7 @@ category.map(async (item) => {
 
             // add "category" item to the news detail
             newsDetail[0].category = item.name;
+            newsDetail[0].hasAttachment = checkAttachment(newsDetail[0].content);
 
             // Generate OG image
             const ogImageOutputDir = path.join(__dirname, 'dist', 'og');

@@ -17,6 +17,7 @@ interface News {
     content: string;
     category: string;
     ogImage?: string;
+    hasAttachment: boolean;
 }
 
 interface CustomTextMetrics {
@@ -65,6 +66,7 @@ class OGImageGenerator {
         this.drawTitle(context, newsItem.title);
         this.drawMetadata(context, newsItem.date, newsItem.category);
         this.drawContactInfo(context, newsItem.department, newsItem.author);
+        this.drawHasAttachment(context, newsItem.hasAttachment);
 
         const optimizedBuffer = await this.optimizeImage(canvas);
         const imagePath = await this.saveImage(optimizedBuffer, newsItem.timestamp);
@@ -117,6 +119,12 @@ class OGImageGenerator {
         const fontSize = 30;
         context.fillStyle = '#4b5563';
         this.drawText(context, `${department} ${author}`, 50, this.height - 100, this.width - 100, fontSize);
+    }
+
+    private drawHasAttachment(context: CanvasRenderingContext2D, hasAttachment: boolean): void {
+        const fontSize = 24;
+        context.fillStyle = '#4b5563';
+        this.drawText(context, hasAttachment ? '🈶  有附件' : '', 50, this.height - 150, this.width - 100, fontSize);
     }
 
     private wrapText(
