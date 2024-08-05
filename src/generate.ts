@@ -125,6 +125,10 @@ async function createOGImageForNewsItem(newsItem: News, outputDir: string): Prom
 
 category.map(async (item) => {
     console.log(`Generating ${item.name}...`);
+    if (item.id === 0) {
+        console.log('Skip generating "全部消息"');
+        return;
+    }
 
     // 5 pages of simple news list
     for (let i = 1; i <= 5; i++) {
@@ -140,7 +144,7 @@ category.map(async (item) => {
         }
 
         // for each news item, generate a html file
-        const outputDir = path.join(__dirname, 'dist', item.category);
+        const outputDir = path.join(__dirname, 'dist');
         ensureDirSync(outputDir);
 
         newsData.forEach(async (newsItem, index) => {
