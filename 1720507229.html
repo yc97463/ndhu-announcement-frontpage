@@ -1,59 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>國內新冠及流感例仍多，提醒您請注意身體健康狀況~</title>
-    <meta property="og:title" content="國內新冠及流感例仍多，提醒您請注意身體健康狀況~" />
-    <meta property="og:description" content="國立東華大學 2024/07/09「行政公告」公告。
-    =============
-    親愛的東華人平安
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>
+    國內新冠及流感例仍多，提醒您請注意身體健康狀況~
+  </title>
+  <meta property="og:title" content="國內新冠及流感例仍多，提醒您請注意身體健康狀況~" />
+  <meta property="og:description" content="國立東華大學 2024/07/09「其他公告」公告。
+  =============
+  親愛的東華人平安
   目前流感等呼吸道病毒於社區活動度持續升溫，提醒您請注意身體健康狀況~。
 如有發 (...more)
-    " />
-    <meta property="og:image" content="https://news.ndhu.me/og/1720507229.webp" />
-    <meta property="og:image" content="https://news.ndhu.me/og/1720507229.webp" />
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content="https://news.ndhu.me/og/1720507229.webp">
-    <meta property="telegram_channel" content="turbolabit">
+  " />
+  <meta property="og:image" content="https://news.ndhu.me/og/1720507229.webp" />
+  <meta property="og:image" content="https://news.ndhu.me/og/1720507229.webp" />
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://news.ndhu.me/og/1720507229.webp">
+  <meta property="telegram_channel" content="turbolabit">
+  <meta property="og:url" content="https://news.ndhu.me/1720507229" />
 
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        theme: {
-          fontFamily: {
-            sans: '"Noto Sans TC", Arial, sans-serif',
-          },
-          container: {
-            padding: "1rem",
-            center: true,
-            screens: {
-              xl: "576px",
-            },
-          },
-          extend: {
-            backgroundImage: {},
-            opacity: {
-              15: "0.15",
-            },
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        fontFamily: {
+          sans: '"Noto Sans TC", Arial, sans-serif',
+        },
+        container: {
+          padding: "1rem",
+          center: true,
+          screens: {
+            xl: "576px",
           },
         },
-      };
-    </script>
-    <style type="text/tailwindcss">
-      @layer utilities {
-        .content-auto {
-          content-visibility: auto;
-        }
+        extend: {
+          backgroundImage: {},
+          opacity: {
+            15: "0.15",
+          },
+        },
+      },
+    };
+  </script>
+  <style type="text/tailwindcss">
+    @layer utilities {
+      .content-auto {
+        content-visibility: auto;
       }
+    }
+    @keyframes slideDown {
+      from { transform: translateY(-50px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+    .animate-slide-down {
+      animation: slideDown 0.3s ease-out;
+    }
     </style>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    <base href="https://announce.ndhu.edu.tw/" />
-  </head>
-  <body>
-    <div class="container my-6">
-      <h1 class="text-2xl font-medium mb-4">國立東華大學公告</h1>
-      <!-- <div id="article">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <base href="https://announce.ndhu.edu.tw/" />
+</head>
+
+<body>
+  <div class="container my-6">
+    <h1 class="text-2xl font-medium mb-4">國立東華大學公告</h1>
+    <!-- <div id="article">
         <div class="overflow-x-auto">
             <p class="text-center text-gray-500 ">
               如果內容無法正常顯示，請前往 <a href="https://announce.ndhu.edu.tw/mail_display.php?timestamp=1720507229">#1720507229</a> 查看。
@@ -61,8 +74,8 @@
           </div>
       </div> -->
 
-      <div class="border-2 border-slate-400 rounded-md my-4 p-3">
-        <!-- <div class="mb-1 text-xl flex items-center gap-1">
+    <div class="border-2 border-slate-400 rounded-md my-4 p-3">
+      <!-- <div class="mb-1 text-xl flex items-center gap-1">
           <h2>國內新冠及流感例仍多，提醒您請注意身體健康狀況~</h2>
           <span
             class="material-symbols-outlined text-slate-500 hover:text-sky-500 text-[larger] cursor-pointer"
@@ -77,50 +90,54 @@
             open_in_new
           </span>
         </div> -->
-        <div class="mb-4">
-          <div class="flex items-start justify-between gap-2">
-            <h2 class="text-xl font-semibold break-words flex-grow">國內新冠及流感例仍多，提醒您請注意身體健康狀況~</h2>
-            <div class="flex items-center gap-1 flex-shrink-0">
-              <button
-                class="p-1 text-slate-500 hover:text-sky-500 focus:outline-none rounded-full"
-                onclick="navigator.clipboard.writeText(window.location.href).then(()=>{alert('已複製連結')})"
-                title="複製連結"
-              >
-                <span class="material-symbols-outlined">share</span>
-              </button>
-              <button
-                class="p-1 text-slate-500 hover:text-sky-500 rounded-full"
-                onclick="window.open(`https://announce.ndhu.edu.tw/mail_display.php?timestamp=1720507229`)"
-                title="在新視窗中開啟"
-              >
-                <span class="material-symbols-outlined">open_in_new</span>
-              </button>
-            </div>
+      <div class="mb-4">
+        <div class="flex items-start justify-between gap-2">
+          <h2 class="text-xl font-semibold break-words flex-grow">
+            國內新冠及流感例仍多，提醒您請注意身體健康狀況~
+          </h2>
+          <div class="flex items-center gap-1 flex-shrink-0">
+            <button class="p-1 text-slate-500 hover:text-sky-500 focus:outline-none rounded-full"
+              onclick="navigator.clipboard.writeText(window.location.href).then(()=>{alert('已複製連結')})" title="複製連結">
+              <span class="material-symbols-outlined">share</span>
+            </button>
+            <button class="p-1 text-slate-500 hover:text-sky-500 rounded-full"
+              onclick="window.open(`https://announce.ndhu.edu.tw/mail_display.php?timestamp=1720507229`)"
+              title="在新視窗中開啟">
+              <span class="material-symbols-outlined">open_in_new</span>
+            </button>
           </div>
         </div>
-        <div class="text-slate-500 flex flex-wrap items-center gap-2 sm:gap-1">
-          <div class="flex items-center gap-1">
-            <span id="date" class="whitespace-nowrap">2024/07/09 14:40</span>
-            <span class="text-slate-500 hidden sm:inline">·</span>
-          </div>
-          
-          <div class="flex items-center gap-1">
-            <span id="category" class="whitespace-nowrap">行政公告</span>
-            <span class="text-slate-500 hidden sm:inline">·</span>
-          </div>
-          
-          <div id="contactInfo" class="flex items-center gap-1 hover:text-sky-500 cursor-pointer">
-            <span id="department" class="whitespace-nowrap">學務處衛生保健組</span>
-            <span class="material-symbols-outlined text-[larger]">
-              info
-            </span>
-          </div>
+      </div>
+      <div class="text-slate-500 flex flex-wrap items-center gap-2 sm:gap-1">
+        <div class="flex items-center gap-1">
+          <span id="date" class="whitespace-nowrap">
+            2024/07/09 14:40
+          </span>
+          <span class="text-slate-500 hidden sm:inline">·</span>
         </div>
 
-        <hr class="my-2" />
-        <div>
-          <div class="overflow-x-auto">
-            <pre>親愛的東華人平安
+        <div class="flex items-center gap-1">
+          <span id="category" class="whitespace-nowrap">
+            其他公告
+          </span>
+          <span class="text-slate-500 hidden sm:inline">·</span>
+        </div>
+
+        <div id="contactInfo" class="flex items-center gap-1 hover:text-sky-500 cursor-pointer">
+          <span id="department" class="whitespace-nowrap">
+            學務處衛生保健組
+          </span>
+          <span class="material-symbols-outlined text-[larger]">
+            info
+          </span>
+        </div>
+      </div>
+
+      <hr class="my-2" />
+      <div>
+        <!-- white-space: pre-wrap; word-wrap: break-word; overflow-wrap: break-word; -->
+        <div id="article" class="overflow-x-auto whitespace-pre-wrap break-words overflow-wrap break-word">
+          <pre>親愛的東華人平安
   目前流感等呼吸道病毒於社區活動度持續升溫，提醒您請注意身體健康狀況~。
 如有發燒或急性呼吸道症狀，應佩戴口罩儘速就醫，並主動告知旅遊史等相關TOCC，以供醫師評估及時診斷通報。
 為了您及家人的健康，以下事項提醒您：
@@ -141,154 +158,137 @@
 </pre>
 		
 </div>
-          </div>
           
-          <hr class="my-2" />
-          <h3 class="text-xl font-medium mb-2">附件</h3>
-          <div id="attachments"></div>
         </div>
 
-            
-        </ul>
+        <hr class="my-2" />
+        <h3 class="text-xl font-medium mb-2">附件</h3>
+        <div id="attachments">
+          
+            <li>無附件</li>
+          
+        </div>
+      </div>
+
+      <div class="mt-4">
+        <a href="https://news.ndhu.me" class="text-slate-500 hover:text-sky-500 cursor-pointer flex items-center gap-1">
+          <span class="material-symbols-outlined text-[larger]">
+            arrow_back
+          </span>
+          返回公告列表
+        </a>
       </div>
     </div>
+  </div>
 
-    <!-- Modal -->
-    <div id="infoModal" class="fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full hidden">
-      <div class="relative top-20 mx-auto p-5 border w-96 shadow-lg rounded-md bg-white">
-        <!-- <span id="closeModal" class="material-symbols-outlined text-slate-500 hover:text-sky-500 cursor-pointer absolute top-4 right-4">
-          close
-        </span>-->
-        <div class="mt-3">
-          <div class="mt-2 px-7 py-3">
-            <h3 class="text-lg text-gray-500">
-              <span id="modalAuthor"></span>
-            </h3>
-            <p class="text-gray-500 mt-1">
-              <span id="modalDepartment"></span>
-            </p>
-          </div>
+  <!-- Modal -->
+  <div id="infoModal"
+    class="fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full hidden opacity-0 transition-opacity duration-300">
+    <div class="relative top-20 mx-auto p-5 border w-96 shadow-lg rounded-md bg-white animate-slide-down">
+      <div class="mt-3">
+        <div class="mt-2 px-7 py-3">
+          <h3 class="text-lg text-gray-500">
+            <span id="modalAuthor"></span>
+          </h3>
+          <p class="text-gray-500 mt-1">
+            <span id="modalDepartment"></span>
+          </p>
+        </div>
 
-          <!-- contact -->
-          <div class="">
-            <a class="px-4 py-2 text-slate-500 text-base font-medium rounded-md w-full shadow-sm hover:bg-slate-200 hover:text-black focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-sky-500">
-              <span class="material-symbols-outlined text-[larger]">email</span>
-              EMAIL
-            </a>
-          </div>
+        <!-- contact -->
+        <div class="">
+          <!-- Contact button can be added here if needed -->
+        </div>
 
-          <div class="items-center px-4 py-3">
-            <button id="closeModal" class="px-4 py-2 text-slate-500 text-base font-medium rounded-md w-full shadow-sm hover:bg-slate-200 hover:text-black focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-sky-500">
-              關閉
-            </button>
-          </div>
+        <!-- a note -->
+        <div class="mt-3 px-7 py-3">
+          <p class="">
+            公告人聯絡方式，請連結至原始公告查看。
+          </p>
+        </div>
+
+        <div class="items-center px-4 py-3">
+          <button id="closeModal"
+            class="px-4 py-2 text-slate-500 text-base font-medium rounded-md w-full shadow-sm hover:bg-slate-200 hover:text-black focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-sky-500 transition duration-300 ease-in-out">
+            關閉
+          </button>
         </div>
       </div>
     </div>
+  </div>
 
-    <script>
-      // Get modal elements
-      const modal = document.getElementById('infoModal');
-      const closeButton = document.getElementById('closeModal');
-      const infoButton = document.getElementById('contactInfo');
-      const modalAuthor = document.getElementById('modalAuthor');
-      const modalDepartment = document.getElementById('modalDepartment');
+  <script>
+    // Get modal elements
+    const modal = document.getElementById('infoModal');
+    const closeButton = document.getElementById('closeModal');
+    const infoButton = document.getElementById('contactInfo');
+    const modalAuthor = document.getElementById('modalAuthor');
+    const modalDepartment = document.getElementById('modalDepartment');
 
-      // Show modal
-      infoButton.onclick = function() {
-        modal.classList.remove('hidden');
-        modalAuthor.textContent = '王惠貞';
-        modalDepartment.textContent = '學務處衛生保健組';
-      }
+    // Show modal with animation
+    infoButton.onclick = function () {
+      modal.classList.remove('hidden');
+      setTimeout(() => {
+        modal.classList.remove('opacity-0');
+      }, 10); // Small delay to ensure the display change has taken effect
+      modalAuthor.textContent = '王惠貞';
+      modalDepartment.textContent = '學務處衛生保健組';
+    }
 
-      // Close modal
-      closeButton.onclick = function() {
+    // Close modal with animation
+    function closeModal() {
+      modal.classList.add('opacity-0');
+      setTimeout(() => {
         modal.classList.add('hidden');
+      }, 300); // Wait for the fade-out animation to complete
+    }
+
+    closeButton.onclick = closeModal;
+
+    // Close modal when clicking outside
+    window.onclick = function (event) {
+      if (event.target == modal) {
+        closeModal();
       }
+    }
+  </script>
 
-      // Close modal when clicking outside
-      window.onclick = function(event) {
-        if (event.target == modal) {
-          modal.classList.add('hidden');
-        }
-      }
-    </script>
+  <script type="text/javascript">
+    let article = document.getElementById("article");
 
-    <script type="text/javascript">
-      let article = document.getElementById("article");
+    function countDays(date) {
+      let now = new Date();
+      let target = new Date(date);
+      let diff = now.getTime() - target.getTime();
+      let days = Math.floor(diff / (1000 * 60 * 60 * 24));
 
-      function countDays(date) {
-        let now = new Date();
-        let target = new Date(date);
-        let diff = now.getTime() - target.getTime();
-        let days = Math.floor(diff / (1000 * 60 * 60 * 24));
-
-        if (days <= 0) {
-          // return n minutes ago
-          let minutes = Math.floor(diff / (1000 * 60));
-          if (minutes <= 5) {
-            return "剛剛";
-          } else if (minutes <= 60) {
-            return `${minutes} 分鐘前`;
-          } else {
-            return `${Math.floor(minutes / 60)} 小時前`;
-          }
-        } else if (days == 1) {
-          return "昨天";
-        } else if (days == 2) {
-          return "前天";
+      if (days <= 0) {
+        // return n minutes ago
+        let minutes = Math.floor(diff / (1000 * 60));
+        if (minutes <= 5) {
+          return "剛剛";
+        } else if (minutes <= 60) {
+          return `${minutes} 分鐘前`;
         } else {
-          return `${days} 天前`;
+          return `${Math.floor(minutes / 60)} 小時前`;
         }
-      };
+      } else if (days == 1) {
+        return "昨天";
+      } else if (days == 2) {
+        return "前天";
+      } else {
+        return `${days} 天前`;
+      }
+    };
 
-      const content = `<div class="column1-unit">
+    const content = document.getElementById("article").innerHTML;
 
-<!--  信件內容   -->
-<pre>分類： 行政公告, 其他公告
-來源： 學務處衛生保健組 - 王惠貞 - labi@gms.ndhu.edu.tw - 電話8906253
-對象： 全校教職員_休學學生_兼任教師_退休教職員_教職員眷屬
-標題： 國內新冠及流感例仍多，提醒您請注意身體健康狀況~
-日期： Tue, 9 Jul 2024 14:40:29 +0800
-</pre><hr class="clear-contentunit"/><pre>親愛的東華人平安
-  目前流感等呼吸道病毒於社區活動度持續升溫，提醒您請注意身體健康狀況~。
-如有發燒或急性呼吸道症狀，應佩戴口罩儘速就醫，並主動告知旅遊史等相關TOCC，以供醫師評估及時診斷通報。
-為了您及家人的健康，以下事項提醒您：
-1、請保持個人良好衛生習慣、勤洗手及藉由「均衡飲食」、「規律運動」、「作息規律不熬夜」、「補充足夠的水分」來增強抵抗力。
-2、防疫常規措施:請保持環境清潔、定期消毒、洗手台設置洗手用品等。
-3、您或家人、同學出現發燒、頭痛、肌肉酸痛、倦怠感或呼吸道症狀（喉嚨痛、咳嗽、非過敏引起之流鼻水）時應：
-(1)儘速就醫並告知醫師旅遊史(2)勤洗手(3)不到公共場所、外出戴口罩
-(4)咳嗽時以衛生紙遮口鼻(5)手部接觸分泌物要洗手(6)盡可能與別人保持1公尺以上距離。(7)用過的口罩、衛生紙請丟入密閉式垃圾桶。
-4、感冒、流感、新冠肺炎建議辨別方式:
-     🤧感冒:喉嚨痛、咳嗽、鼻塞流鼻水、肌肉痠痛、腹瀉、腹痛腹瀉、不太會發燒。
-     🤮流感:發燒、喉嚨痛、乾咳、肌肉痠痛、疲勞。
-     😷新冠肺炎:發燒、喉嚨痛、鼻塞流鼻水、肌肉痠痛、疲捲感、噁心、腹瀉、腹痛腹瀉。
-相關諮詢電話：疾病管制局諮詢專線1922或校內衛保組03-8906252~4
-                                                                                               您健康，學務處安心 
+    window.onload = () => {
+      // format publish time
+      const date = document.getElementById("date");
+      date.innerHTML = countDays(date.innerHTML);
+    };
+  </script>
+</body>
 
-
-
-</pre>
-		
-</div>`;
-    
-      window.onload = () => {
-        // format publish time
-        const date = document.getElementById("date");
-        date.innerHTML = countDays(date.innerHTML);
-
-        // check attachments
-        let attachments = null;
-        try {
-          attachments = content
-            .split(`<hr class="clear-contentunit"/>`)[1]
-            .split(`<hr/>`)[1]
-            .split(`<p>`)[1];
-        } catch (e) {
-          attachments = `<li>無附件</li>`;
-        }
-        document.getElementById("attachments").innerHTML = attachments;
-      };
-    </script>
-  </body>
 </html>

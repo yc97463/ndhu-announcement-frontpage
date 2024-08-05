@@ -1,59 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>07-25(四10:00 ~11:00)--線上課程-- 防範電子郵件社交工程</title>
-    <meta property="og:title" content="07-25(四10:00 ~11:00)--線上課程-- 防範電子郵件社交工程" />
-    <meta property="og:description" content="國立東華大學 2024/07/15「研討會」公告。
-    =============
-    主題：防範電子郵件社交工程
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>
+    07-25(四10:00 ~11:00)--線上課程-- 防範電子郵件社交工程
+  </title>
+  <meta property="og:title" content="07-25(四10:00 ~11:00)--線上課程-- 防範電子郵件社交工程" />
+  <meta property="og:description" content="國立東華大學 2024/07/15「研討會」公告。
+  =============
+  主題：防範電子郵件社交工程
 講師：圖資處何振揚技術師
 時間：7月25日(四) 10:00至11:00 (...more)
-    " />
-    <meta property="og:image" content="https://news.ndhu.me/og/1721025808.webp" />
-    <meta property="og:image" content="https://news.ndhu.me/og/1721025808.webp" />
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content="https://news.ndhu.me/og/1721025808.webp">
-    <meta property="telegram_channel" content="turbolabit">
+  " />
+  <meta property="og:image" content="https://news.ndhu.me/og/1721025808.webp" />
+  <meta property="og:image" content="https://news.ndhu.me/og/1721025808.webp" />
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://news.ndhu.me/og/1721025808.webp">
+  <meta property="telegram_channel" content="turbolabit">
+  <meta property="og:url" content="https://news.ndhu.me/1721025808" />
 
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        theme: {
-          fontFamily: {
-            sans: '"Noto Sans TC", Arial, sans-serif',
-          },
-          container: {
-            padding: "1rem",
-            center: true,
-            screens: {
-              xl: "576px",
-            },
-          },
-          extend: {
-            backgroundImage: {},
-            opacity: {
-              15: "0.15",
-            },
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        fontFamily: {
+          sans: '"Noto Sans TC", Arial, sans-serif',
+        },
+        container: {
+          padding: "1rem",
+          center: true,
+          screens: {
+            xl: "576px",
           },
         },
-      };
-    </script>
-    <style type="text/tailwindcss">
-      @layer utilities {
-        .content-auto {
-          content-visibility: auto;
-        }
+        extend: {
+          backgroundImage: {},
+          opacity: {
+            15: "0.15",
+          },
+        },
+      },
+    };
+  </script>
+  <style type="text/tailwindcss">
+    @layer utilities {
+      .content-auto {
+        content-visibility: auto;
       }
+    }
+    @keyframes slideDown {
+      from { transform: translateY(-50px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+    .animate-slide-down {
+      animation: slideDown 0.3s ease-out;
+    }
     </style>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    <base href="https://announce.ndhu.edu.tw/" />
-  </head>
-  <body>
-    <div class="container my-6">
-      <h1 class="text-2xl font-medium mb-4">國立東華大學公告</h1>
-      <!-- <div id="article">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <base href="https://announce.ndhu.edu.tw/" />
+</head>
+
+<body>
+  <div class="container my-6">
+    <h1 class="text-2xl font-medium mb-4">國立東華大學公告</h1>
+    <!-- <div id="article">
         <div class="overflow-x-auto">
             <p class="text-center text-gray-500 ">
               如果內容無法正常顯示，請前往 <a href="https://announce.ndhu.edu.tw/mail_display.php?timestamp=1721025808">#1721025808</a> 查看。
@@ -61,8 +74,8 @@
           </div>
       </div> -->
 
-      <div class="border-2 border-slate-400 rounded-md my-4 p-3">
-        <!-- <div class="mb-1 text-xl flex items-center gap-1">
+    <div class="border-2 border-slate-400 rounded-md my-4 p-3">
+      <!-- <div class="mb-1 text-xl flex items-center gap-1">
           <h2>07-25(四10:00 ~11:00)--線上課程-- 防範電子郵件社交工程</h2>
           <span
             class="material-symbols-outlined text-slate-500 hover:text-sky-500 text-[larger] cursor-pointer"
@@ -77,50 +90,54 @@
             open_in_new
           </span>
         </div> -->
-        <div class="mb-4">
-          <div class="flex items-start justify-between gap-2">
-            <h2 class="text-xl font-semibold break-words flex-grow">07-25(四10:00 ~11:00)--線上課程-- 防範電子郵件社交工程</h2>
-            <div class="flex items-center gap-1 flex-shrink-0">
-              <button
-                class="p-1 text-slate-500 hover:text-sky-500 focus:outline-none rounded-full"
-                onclick="navigator.clipboard.writeText(window.location.href).then(()=>{alert('已複製連結')})"
-                title="複製連結"
-              >
-                <span class="material-symbols-outlined">share</span>
-              </button>
-              <button
-                class="p-1 text-slate-500 hover:text-sky-500 rounded-full"
-                onclick="window.open(`https://announce.ndhu.edu.tw/mail_display.php?timestamp=1721025808`)"
-                title="在新視窗中開啟"
-              >
-                <span class="material-symbols-outlined">open_in_new</span>
-              </button>
-            </div>
+      <div class="mb-4">
+        <div class="flex items-start justify-between gap-2">
+          <h2 class="text-xl font-semibold break-words flex-grow">
+            07-25(四10:00 ~11:00)--線上課程-- 防範電子郵件社交工程
+          </h2>
+          <div class="flex items-center gap-1 flex-shrink-0">
+            <button class="p-1 text-slate-500 hover:text-sky-500 focus:outline-none rounded-full"
+              onclick="navigator.clipboard.writeText(window.location.href).then(()=>{alert('已複製連結')})" title="複製連結">
+              <span class="material-symbols-outlined">share</span>
+            </button>
+            <button class="p-1 text-slate-500 hover:text-sky-500 rounded-full"
+              onclick="window.open(`https://announce.ndhu.edu.tw/mail_display.php?timestamp=1721025808`)"
+              title="在新視窗中開啟">
+              <span class="material-symbols-outlined">open_in_new</span>
+            </button>
           </div>
         </div>
-        <div class="text-slate-500 flex flex-wrap items-center gap-2 sm:gap-1">
-          <div class="flex items-center gap-1">
-            <span id="date" class="whitespace-nowrap">2024/07/15 14:43</span>
-            <span class="text-slate-500 hidden sm:inline">·</span>
-          </div>
-          
-          <div class="flex items-center gap-1">
-            <span id="category" class="whitespace-nowrap">研討會</span>
-            <span class="text-slate-500 hidden sm:inline">·</span>
-          </div>
-          
-          <div id="contactInfo" class="flex items-center gap-1 hover:text-sky-500 cursor-pointer">
-            <span id="department" class="whitespace-nowrap">圖書資訊處圖資服務組</span>
-            <span class="material-symbols-outlined text-[larger]">
-              info
-            </span>
-          </div>
+      </div>
+      <div class="text-slate-500 flex flex-wrap items-center gap-2 sm:gap-1">
+        <div class="flex items-center gap-1">
+          <span id="date" class="whitespace-nowrap">
+            2024/07/15 14:43
+          </span>
+          <span class="text-slate-500 hidden sm:inline">·</span>
         </div>
 
-        <hr class="my-2" />
-        <div>
-          <div class="overflow-x-auto">
-            <pre>主題：防範電子郵件社交工程
+        <div class="flex items-center gap-1">
+          <span id="category" class="whitespace-nowrap">
+            研討會
+          </span>
+          <span class="text-slate-500 hidden sm:inline">·</span>
+        </div>
+
+        <div id="contactInfo" class="flex items-center gap-1 hover:text-sky-500 cursor-pointer">
+          <span id="department" class="whitespace-nowrap">
+            圖書資訊處圖資服務組
+          </span>
+          <span class="material-symbols-outlined text-[larger]">
+            info
+          </span>
+        </div>
+      </div>
+
+      <hr class="my-2" />
+      <div>
+        <!-- white-space: pre-wrap; word-wrap: break-word; overflow-wrap: break-word; -->
+        <div id="article" class="overflow-x-auto whitespace-pre-wrap break-words overflow-wrap break-word">
+          <pre>主題：防範電子郵件社交工程
 講師：圖資處何振揚技術師
 時間：7月25日(四) 10:00至11:00 (1小時)
 形式：線上課程
@@ -152,165 +169,137 @@ Office 365(Outlook)設定
 </pre>
 		
 </div>
-          </div>
           
-          <hr class="my-2" />
-          <h3 class="text-xl font-medium mb-2">附件</h3>
-          <div id="attachments"></div>
         </div>
 
-            
-        </ul>
+        <hr class="my-2" />
+        <h3 class="text-xl font-medium mb-2">附件</h3>
+        <div id="attachments">
+          
+            <li>無附件</li>
+          
+        </div>
+      </div>
+
+      <div class="mt-4">
+        <a href="https://news.ndhu.me" class="text-slate-500 hover:text-sky-500 cursor-pointer flex items-center gap-1">
+          <span class="material-symbols-outlined text-[larger]">
+            arrow_back
+          </span>
+          返回公告列表
+        </a>
       </div>
     </div>
+  </div>
 
-    <!-- Modal -->
-    <div id="infoModal" class="fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full hidden">
-      <div class="relative top-20 mx-auto p-5 border w-96 shadow-lg rounded-md bg-white">
-        <!-- <span id="closeModal" class="material-symbols-outlined text-slate-500 hover:text-sky-500 cursor-pointer absolute top-4 right-4">
-          close
-        </span>-->
-        <div class="mt-3">
-          <div class="mt-2 px-7 py-3">
-            <h3 class="text-lg text-gray-500">
-              <span id="modalAuthor"></span>
-            </h3>
-            <p class="text-gray-500 mt-1">
-              <span id="modalDepartment"></span>
-            </p>
-          </div>
+  <!-- Modal -->
+  <div id="infoModal"
+    class="fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full hidden opacity-0 transition-opacity duration-300">
+    <div class="relative top-20 mx-auto p-5 border w-96 shadow-lg rounded-md bg-white animate-slide-down">
+      <div class="mt-3">
+        <div class="mt-2 px-7 py-3">
+          <h3 class="text-lg text-gray-500">
+            <span id="modalAuthor"></span>
+          </h3>
+          <p class="text-gray-500 mt-1">
+            <span id="modalDepartment"></span>
+          </p>
+        </div>
 
-          <!-- contact -->
-          <div class="">
-            <a class="px-4 py-2 text-slate-500 text-base font-medium rounded-md w-full shadow-sm hover:bg-slate-200 hover:text-black focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-sky-500">
-              <span class="material-symbols-outlined text-[larger]">email</span>
-              EMAIL
-            </a>
-          </div>
+        <!-- contact -->
+        <div class="">
+          <!-- Contact button can be added here if needed -->
+        </div>
 
-          <div class="items-center px-4 py-3">
-            <button id="closeModal" class="px-4 py-2 text-slate-500 text-base font-medium rounded-md w-full shadow-sm hover:bg-slate-200 hover:text-black focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-sky-500">
-              關閉
-            </button>
-          </div>
+        <!-- a note -->
+        <div class="mt-3 px-7 py-3">
+          <p class="">
+            公告人聯絡方式，請連結至原始公告查看。
+          </p>
+        </div>
+
+        <div class="items-center px-4 py-3">
+          <button id="closeModal"
+            class="px-4 py-2 text-slate-500 text-base font-medium rounded-md w-full shadow-sm hover:bg-slate-200 hover:text-black focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-sky-500 transition duration-300 ease-in-out">
+            關閉
+          </button>
         </div>
       </div>
     </div>
+  </div>
 
-    <script>
-      // Get modal elements
-      const modal = document.getElementById('infoModal');
-      const closeButton = document.getElementById('closeModal');
-      const infoButton = document.getElementById('contactInfo');
-      const modalAuthor = document.getElementById('modalAuthor');
-      const modalDepartment = document.getElementById('modalDepartment');
+  <script>
+    // Get modal elements
+    const modal = document.getElementById('infoModal');
+    const closeButton = document.getElementById('closeModal');
+    const infoButton = document.getElementById('contactInfo');
+    const modalAuthor = document.getElementById('modalAuthor');
+    const modalDepartment = document.getElementById('modalDepartment');
 
-      // Show modal
-      infoButton.onclick = function() {
-        modal.classList.remove('hidden');
-        modalAuthor.textContent = '葉宏達';
-        modalDepartment.textContent = '圖書資訊處圖資服務組';
-      }
+    // Show modal with animation
+    infoButton.onclick = function () {
+      modal.classList.remove('hidden');
+      setTimeout(() => {
+        modal.classList.remove('opacity-0');
+      }, 10); // Small delay to ensure the display change has taken effect
+      modalAuthor.textContent = '葉宏達';
+      modalDepartment.textContent = '圖書資訊處圖資服務組';
+    }
 
-      // Close modal
-      closeButton.onclick = function() {
+    // Close modal with animation
+    function closeModal() {
+      modal.classList.add('opacity-0');
+      setTimeout(() => {
         modal.classList.add('hidden');
+      }, 300); // Wait for the fade-out animation to complete
+    }
+
+    closeButton.onclick = closeModal;
+
+    // Close modal when clicking outside
+    window.onclick = function (event) {
+      if (event.target == modal) {
+        closeModal();
       }
+    }
+  </script>
 
-      // Close modal when clicking outside
-      window.onclick = function(event) {
-        if (event.target == modal) {
-          modal.classList.add('hidden');
-        }
-      }
-    </script>
+  <script type="text/javascript">
+    let article = document.getElementById("article");
 
-    <script type="text/javascript">
-      let article = document.getElementById("article");
+    function countDays(date) {
+      let now = new Date();
+      let target = new Date(date);
+      let diff = now.getTime() - target.getTime();
+      let days = Math.floor(diff / (1000 * 60 * 60 * 24));
 
-      function countDays(date) {
-        let now = new Date();
-        let target = new Date(date);
-        let diff = now.getTime() - target.getTime();
-        let days = Math.floor(diff / (1000 * 60 * 60 * 24));
-
-        if (days <= 0) {
-          // return n minutes ago
-          let minutes = Math.floor(diff / (1000 * 60));
-          if (minutes <= 5) {
-            return "剛剛";
-          } else if (minutes <= 60) {
-            return `${minutes} 分鐘前`;
-          } else {
-            return `${Math.floor(minutes / 60)} 小時前`;
-          }
-        } else if (days == 1) {
-          return "昨天";
-        } else if (days == 2) {
-          return "前天";
+      if (days <= 0) {
+        // return n minutes ago
+        let minutes = Math.floor(diff / (1000 * 60));
+        if (minutes <= 5) {
+          return "剛剛";
+        } else if (minutes <= 60) {
+          return `${minutes} 分鐘前`;
         } else {
-          return `${days} 天前`;
+          return `${Math.floor(minutes / 60)} 小時前`;
         }
-      };
+      } else if (days == 1) {
+        return "昨天";
+      } else if (days == 2) {
+        return "前天";
+      } else {
+        return `${days} 天前`;
+      }
+    };
 
-      const content = `<div class="column1-unit">
+    const content = document.getElementById("article").innerHTML;
 
-<!--  信件內容   -->
-<pre>分類： 演講暨研討會
-來源： 圖書資訊處圖資服務組 - 葉宏達 - honda@gms.ndhu.edu.tw - 電話8906747
-對象： 全校教師_全校職員
-標題： 07-25(四10:00 ~11:00)--線上課程-- 防範電子郵件社交工程
-日期： Mon, 15 Jul 2024 14:43:28 +0800
-</pre><hr class="clear-contentunit"/><pre>主題：防範電子郵件社交工程
-講師：圖資處何振揚技術師
-時間：7月25日(四) 10:00至11:00 (1小時)
-形式：線上課程
-報名網址：&lt;7/15開放報名&gt;
-(原網址) <a href="http://mis.ndhu.edu.tw/j.php?v=336f786" target="_blank">http://mis.ndhu.edu.tw/j.php?v=336f786</a>
-(縮址) <a href="https://bit.ly/4cCBkqk" target="_blank">https://bit.ly/4cCBkqk</a>
+    window.onload = () => {
+      // format publish time
+      const date = document.getElementById("date");
+      date.innerHTML = countDays(date.innerHTML);
+    };
+  </script>
+</body>
 
-
-課程大綱：
-
-一、概要
-教育部社交工程演練
-何謂社交工程
-
-二、社交工程的威脅
-惡意附件
-惡意連結
-偽造身份
-變臉詐騙
-
-三、如何防範
-防範作為
-演練案例
-
-四、Gmail、Outlook防範設定
-GMS設定
-Office 365(Outlook)設定
-
-</pre>
-		
-</div>`;
-    
-      window.onload = () => {
-        // format publish time
-        const date = document.getElementById("date");
-        date.innerHTML = countDays(date.innerHTML);
-
-        // check attachments
-        let attachments = null;
-        try {
-          attachments = content
-            .split(`<hr class="clear-contentunit"/>`)[1]
-            .split(`<hr/>`)[1]
-            .split(`<p>`)[1];
-        } catch (e) {
-          attachments = `<li>無附件</li>`;
-        }
-        document.getElementById("attachments").innerHTML = attachments;
-      };
-    </script>
-  </body>
 </html>

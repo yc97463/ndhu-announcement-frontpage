@@ -1,60 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>玩具復活節花蓮場 志工熱烈招募中</title>
-    <meta property="og:title" content="玩具復活節花蓮場 志工熱烈招募中" />
-    <meta property="og:description" content="國立東華大學 2024/06/16「活動公告」公告。
-    =============
-    感謝有您！台灣玩具圖書館協會
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>
+    玩具復活節花蓮場 志工熱烈招募中
+  </title>
+  <meta property="og:title" content="玩具復活節花蓮場 志工熱烈招募中" />
+  <meta property="og:description" content="國立東華大學 2024/06/16「活動公告」公告。
+  =============
+  感謝有您！台灣玩具圖書館協會
 和TOYOTA合作邁入第九年囉！
 
 除了回收全台二手玩具突破400公噸 (...more)
-    " />
-    <meta property="og:image" content="https://news.ndhu.me/og/1718542120.webp" />
-    <meta property="og:image" content="https://news.ndhu.me/og/1718542120.webp" />
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content="https://news.ndhu.me/og/1718542120.webp">
-    <meta property="telegram_channel" content="turbolabit">
+  " />
+  <meta property="og:image" content="https://news.ndhu.me/og/1718542120.webp" />
+  <meta property="og:image" content="https://news.ndhu.me/og/1718542120.webp" />
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://news.ndhu.me/og/1718542120.webp">
+  <meta property="telegram_channel" content="turbolabit">
+  <meta property="og:url" content="https://news.ndhu.me/1718542120" />
 
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        theme: {
-          fontFamily: {
-            sans: '"Noto Sans TC", Arial, sans-serif',
-          },
-          container: {
-            padding: "1rem",
-            center: true,
-            screens: {
-              xl: "576px",
-            },
-          },
-          extend: {
-            backgroundImage: {},
-            opacity: {
-              15: "0.15",
-            },
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        fontFamily: {
+          sans: '"Noto Sans TC", Arial, sans-serif',
+        },
+        container: {
+          padding: "1rem",
+          center: true,
+          screens: {
+            xl: "576px",
           },
         },
-      };
-    </script>
-    <style type="text/tailwindcss">
-      @layer utilities {
-        .content-auto {
-          content-visibility: auto;
-        }
+        extend: {
+          backgroundImage: {},
+          opacity: {
+            15: "0.15",
+          },
+        },
+      },
+    };
+  </script>
+  <style type="text/tailwindcss">
+    @layer utilities {
+      .content-auto {
+        content-visibility: auto;
       }
+    }
+    @keyframes slideDown {
+      from { transform: translateY(-50px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+    .animate-slide-down {
+      animation: slideDown 0.3s ease-out;
+    }
     </style>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    <base href="https://announce.ndhu.edu.tw/" />
-  </head>
-  <body>
-    <div class="container my-6">
-      <h1 class="text-2xl font-medium mb-4">國立東華大學公告</h1>
-      <!-- <div id="article">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <base href="https://announce.ndhu.edu.tw/" />
+</head>
+
+<body>
+  <div class="container my-6">
+    <h1 class="text-2xl font-medium mb-4">國立東華大學公告</h1>
+    <!-- <div id="article">
         <div class="overflow-x-auto">
             <p class="text-center text-gray-500 ">
               如果內容無法正常顯示，請前往 <a href="https://announce.ndhu.edu.tw/mail_display.php?timestamp=1718542120">#1718542120</a> 查看。
@@ -62,8 +75,8 @@
           </div>
       </div> -->
 
-      <div class="border-2 border-slate-400 rounded-md my-4 p-3">
-        <!-- <div class="mb-1 text-xl flex items-center gap-1">
+    <div class="border-2 border-slate-400 rounded-md my-4 p-3">
+      <!-- <div class="mb-1 text-xl flex items-center gap-1">
           <h2>玩具復活節花蓮場 志工熱烈招募中</h2>
           <span
             class="material-symbols-outlined text-slate-500 hover:text-sky-500 text-[larger] cursor-pointer"
@@ -78,50 +91,54 @@
             open_in_new
           </span>
         </div> -->
-        <div class="mb-4">
-          <div class="flex items-start justify-between gap-2">
-            <h2 class="text-xl font-semibold break-words flex-grow">玩具復活節花蓮場 志工熱烈招募中</h2>
-            <div class="flex items-center gap-1 flex-shrink-0">
-              <button
-                class="p-1 text-slate-500 hover:text-sky-500 focus:outline-none rounded-full"
-                onclick="navigator.clipboard.writeText(window.location.href).then(()=>{alert('已複製連結')})"
-                title="複製連結"
-              >
-                <span class="material-symbols-outlined">share</span>
-              </button>
-              <button
-                class="p-1 text-slate-500 hover:text-sky-500 rounded-full"
-                onclick="window.open(`https://announce.ndhu.edu.tw/mail_display.php?timestamp=1718542120`)"
-                title="在新視窗中開啟"
-              >
-                <span class="material-symbols-outlined">open_in_new</span>
-              </button>
-            </div>
+      <div class="mb-4">
+        <div class="flex items-start justify-between gap-2">
+          <h2 class="text-xl font-semibold break-words flex-grow">
+            玩具復活節花蓮場 志工熱烈招募中
+          </h2>
+          <div class="flex items-center gap-1 flex-shrink-0">
+            <button class="p-1 text-slate-500 hover:text-sky-500 focus:outline-none rounded-full"
+              onclick="navigator.clipboard.writeText(window.location.href).then(()=>{alert('已複製連結')})" title="複製連結">
+              <span class="material-symbols-outlined">share</span>
+            </button>
+            <button class="p-1 text-slate-500 hover:text-sky-500 rounded-full"
+              onclick="window.open(`https://announce.ndhu.edu.tw/mail_display.php?timestamp=1718542120`)"
+              title="在新視窗中開啟">
+              <span class="material-symbols-outlined">open_in_new</span>
+            </button>
           </div>
         </div>
-        <div class="text-slate-500 flex flex-wrap items-center gap-2 sm:gap-1">
-          <div class="flex items-center gap-1">
-            <span id="date" class="whitespace-nowrap">2024/06/16 20:48</span>
-            <span class="text-slate-500 hidden sm:inline">·</span>
-          </div>
-          
-          <div class="flex items-center gap-1">
-            <span id="category" class="whitespace-nowrap">活動公告</span>
-            <span class="text-slate-500 hidden sm:inline">·</span>
-          </div>
-          
-          <div id="contactInfo" class="flex items-center gap-1 hover:text-sky-500 cursor-pointer">
-            <span id="department" class="whitespace-nowrap">管理學院</span>
-            <span class="material-symbols-outlined text-[larger]">
-              info
-            </span>
-          </div>
+      </div>
+      <div class="text-slate-500 flex flex-wrap items-center gap-2 sm:gap-1">
+        <div class="flex items-center gap-1">
+          <span id="date" class="whitespace-nowrap">
+            2024/06/16 20:48
+          </span>
+          <span class="text-slate-500 hidden sm:inline">·</span>
         </div>
 
-        <hr class="my-2" />
-        <div>
-          <div class="overflow-x-auto">
-            <pre>感謝有您！台灣玩具圖書館協會
+        <div class="flex items-center gap-1">
+          <span id="category" class="whitespace-nowrap">
+            活動公告
+          </span>
+          <span class="text-slate-500 hidden sm:inline">·</span>
+        </div>
+
+        <div id="contactInfo" class="flex items-center gap-1 hover:text-sky-500 cursor-pointer">
+          <span id="department" class="whitespace-nowrap">
+            管理學院
+          </span>
+          <span class="material-symbols-outlined text-[larger]">
+            info
+          </span>
+        </div>
+      </div>
+
+      <hr class="my-2" />
+      <div>
+        <!-- white-space: pre-wrap; word-wrap: break-word; overflow-wrap: break-word; -->
+        <div id="article" class="overflow-x-auto whitespace-pre-wrap break-words overflow-wrap break-word">
+          <pre>感謝有您！台灣玩具圖書館協會
 和TOYOTA合作邁入第九年囉！
 
 除了回收全台二手玩具突破400公噸，
@@ -162,176 +179,139 @@
 
 志工線上報名連結表單：<a href="https://reurl.cc/5vkqdR" target="_blank">https://reurl.cc/5vkqdR</a>
 </pre>
-          </div>
           
-          <hr class="my-2" />
-          <h3 class="text-xl font-medium mb-2">附件</h3>
-          <div id="attachments"></div>
         </div>
 
-            
-        </ul>
-      </div>
-    </div>
-
-    <!-- Modal -->
-    <div id="infoModal" class="fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full hidden">
-      <div class="relative top-20 mx-auto p-5 border w-96 shadow-lg rounded-md bg-white">
-        <!-- <span id="closeModal" class="material-symbols-outlined text-slate-500 hover:text-sky-500 cursor-pointer absolute top-4 right-4">
-          close
-        </span>-->
-        <div class="mt-3">
-          <div class="mt-2 px-7 py-3">
-            <h3 class="text-lg text-gray-500">
-              <span id="modalAuthor"></span>
-            </h3>
-            <p class="text-gray-500 mt-1">
-              <span id="modalDepartment"></span>
-            </p>
-          </div>
-
-          <!-- contact -->
-          <div class="">
-            <a class="px-4 py-2 text-slate-500 text-base font-medium rounded-md w-full shadow-sm hover:bg-slate-200 hover:text-black focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-sky-500">
-              <span class="material-symbols-outlined text-[larger]">email</span>
-              EMAIL
-            </a>
-          </div>
-
-          <div class="items-center px-4 py-3">
-            <button id="closeModal" class="px-4 py-2 text-slate-500 text-base font-medium rounded-md w-full shadow-sm hover:bg-slate-200 hover:text-black focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-sky-500">
-              關閉
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <script>
-      // Get modal elements
-      const modal = document.getElementById('infoModal');
-      const closeButton = document.getElementById('closeModal');
-      const infoButton = document.getElementById('contactInfo');
-      const modalAuthor = document.getElementById('modalAuthor');
-      const modalDepartment = document.getElementById('modalDepartment');
-
-      // Show modal
-      infoButton.onclick = function() {
-        modal.classList.remove('hidden');
-        modalAuthor.textContent = '洄瀾共好大學社會責任中心';
-        modalDepartment.textContent = '管理學院';
-      }
-
-      // Close modal
-      closeButton.onclick = function() {
-        modal.classList.add('hidden');
-      }
-
-      // Close modal when clicking outside
-      window.onclick = function(event) {
-        if (event.target == modal) {
-          modal.classList.add('hidden');
-        }
-      }
-    </script>
-
-    <script type="text/javascript">
-      let article = document.getElementById("article");
-
-      function countDays(date) {
-        let now = new Date();
-        let target = new Date(date);
-        let diff = now.getTime() - target.getTime();
-        let days = Math.floor(diff / (1000 * 60 * 60 * 24));
-
-        if (days <= 0) {
-          // return n minutes ago
-          let minutes = Math.floor(diff / (1000 * 60));
-          if (minutes <= 5) {
-            return "剛剛";
-          } else if (minutes <= 60) {
-            return `${minutes} 分鐘前`;
-          } else {
-            return `${Math.floor(minutes / 60)} 小時前`;
-          }
-        } else if (days == 1) {
-          return "昨天";
-        } else if (days == 2) {
-          return "前天";
-        } else {
-          return `${days} 天前`;
-        }
-      };
-
-      const content = `<div class="column1-unit">
-
-<!--  信件內容   -->
-<pre>分類： 活動公告
-來源： 管理學院 - 洄瀾共好大學社會責任中心 - tis@gms.ndhu.edu.tw - 電話3771
-對象： 全校學生
-標題： 玩具復活節花蓮場 志工熱烈招募中
-日期： Sun, 16 Jun 2024 20:48:40 +0800
-附檔： <a href="./message_7/1718542120/%E7%8E%A9%E5%85%B7%E5%BE%A9%E6%B4%BB%E7%AF%80%20-%E5%AE%A3%E5%82%B3%E5%9C%961%20%281%29_0.jpg" target="_blank">玩具復活節 -宣傳圖1 (1)_0.jpg</a> (163 KB)   <a href="./message_7/1718542120/%E7%8E%A9%E5%85%B7%E5%BE%A9%E6%B4%BB%E7%AF%80%20-%E5%AE%A3%E5%82%B3%E5%9C%962%20%281%29_0.jpg" target="_blank">玩具復活節 -宣傳圖2 (1)_0.jpg</a> (162 KB)   <a href="./message_7/1718542120/%E7%8E%A9%E5%85%B7%E5%BE%A9%E6%B4%BB%E7%AF%80%20-%E5%AE%A3%E5%82%B3%E5%9C%963%20%281%29_0.jpg" target="_blank">玩具復活節 -宣傳圖3 (1)_0.jpg</a> (216 KB)   <a href="./message_7/1718542120/%E7%8E%A9%E5%85%B7%E5%BE%A9%E6%B4%BB%E7%AF%80%20-%E5%AE%A3%E5%82%B3%E5%9C%964%20%281%29_0.jpg" target="_blank">玩具復活節 -宣傳圖4 (1)_0.jpg</a> (178 KB)   <a href="./message_7/1718542120/%E7%8E%A9%E5%85%B7%E5%BE%A9%E6%B4%BB%E7%AF%80%20-%E5%AE%A3%E5%82%B3%E5%9C%966%20%281%29_0.jpg" target="_blank">玩具復活節 -宣傳圖6 (1)_0.jpg</a> (106 KB)   </pre><hr class="clear-contentunit"/><pre>感謝有您！台灣玩具圖書館協會
-和TOYOTA合作邁入第九年囉！
-
-除了回收全台二手玩具突破400公噸，
-也連年發起《玩具復活節》，
-揪數百位志工，陪伴大小朋友
-度過最有意義的親子時光！
-
-大家一起在二手玩具闖關中，學習環保與惜物！
-一起在木質玩具體驗裡，感受天然ㄟ尚好！
-歡迎您作伙玩具總動員，感受滿滿笑容！
-
-招募對象：16歲～65歲，具有服務熱忱、喜愛接觸人群
-
-地點：花蓮縣南華國小
-服務時間： 6/22(六)約7:30~13:30
-
-※敬請全程參與及避免遲到、早退！
-
-服務內容：依崗位安排，協助場地布置與復原
-
-■ 玩具 DIY 課程 -助教協助
-
-■ 環保闖關遊戲-擔任關主
-
-■ 二手玩具及木質玩具體驗-現場秩序維護+陪伴親子遊玩
-
-■ 回饋小禮物-協助民眾填寫問券兌換
-
-■ 開幕式+閉幕摸彩-舞台協助
-
-服務須知：
-
-(1) 志工無支薪，但擁有真誠感謝與長久情誼。
-(2) 當日提供活動背心，請著裝服務！
-(3) 交通、住宿請自理。
-
-志工福利：提供便當、服務時數證明條、有公共意外責任險。
-
-志工線上報名連結表單：<a href="https://reurl.cc/5vkqdR" target="_blank">https://reurl.cc/5vkqdR</a>
-</pre><hr/>jpg、png、gif、pdf 附檔縮圖（pdf 只顯示第一頁）：<p></p><div style="text-align:center;display:inline-block;margin-right:20px;"><a href="./message_7/1718542120/%E7%8E%A9%E5%85%B7%E5%BE%A9%E6%B4%BB%E7%AF%80%20-%E5%AE%A3%E5%82%B3%E5%9C%961%20%281%29_0.jpg" target="_blank"><img src="./thumb/1718542120_玩具復活節 -宣傳圖1 (1)_0.jpg"/></a><br/>玩具復活節 -宣傳圖1 (1)_0.jpg</div><div style="text-align:center;display:inline-block;margin-right:20px;"><a href="./message_7/1718542120/%E7%8E%A9%E5%85%B7%E5%BE%A9%E6%B4%BB%E7%AF%80%20-%E5%AE%A3%E5%82%B3%E5%9C%962%20%281%29_0.jpg" target="_blank"><img src="./thumb/1718542120_玩具復活節 -宣傳圖2 (1)_0.jpg"/></a><br/>玩具復活節 -宣傳圖2 (1)_0.jpg</div><div style="text-align:center;display:inline-block;margin-right:20px;"><a href="./message_7/1718542120/%E7%8E%A9%E5%85%B7%E5%BE%A9%E6%B4%BB%E7%AF%80%20-%E5%AE%A3%E5%82%B3%E5%9C%963%20%281%29_0.jpg" target="_blank"><img src="./thumb/1718542120_玩具復活節 -宣傳圖3 (1)_0.jpg"/></a><br/>玩具復活節 -宣傳圖3 (1)_0.jpg</div><div style="text-align:center;display:inline-block;margin-right:20px;"><a href="./message_7/1718542120/%E7%8E%A9%E5%85%B7%E5%BE%A9%E6%B4%BB%E7%AF%80%20-%E5%AE%A3%E5%82%B3%E5%9C%964%20%281%29_0.jpg" target="_blank"><img src="./thumb/1718542120_玩具復活節 -宣傳圖4 (1)_0.jpg"/></a><br/>玩具復活節 -宣傳圖4 (1)_0.jpg</div><div style="text-align:center;display:inline-block;margin-right:20px;"><a href="./message_7/1718542120/%E7%8E%A9%E5%85%B7%E5%BE%A9%E6%B4%BB%E7%AF%80%20-%E5%AE%A3%E5%82%B3%E5%9C%966%20%281%29_0.jpg" target="_blank"><img src="./thumb/1718542120_玩具復活節 -宣傳圖6 (1)_0.jpg"/></a><br/>玩具復活節 -宣傳圖6 (1)_0.jpg</div>
+        <hr class="my-2" />
+        <h3 class="text-xl font-medium mb-2">附件</h3>
+        <div id="attachments">
+          
+            </p><div style="text-align:center;display:inline-block;margin-right:20px;"><a href="./message_7/1718542120/%E7%8E%A9%E5%85%B7%E5%BE%A9%E6%B4%BB%E7%AF%80%20-%E5%AE%A3%E5%82%B3%E5%9C%961%20%281%29_0.jpg" target="_blank"><img src="./thumb/1718542120_玩具復活節 -宣傳圖1 (1)_0.jpg"/></a><br/>玩具復活節 -宣傳圖1 (1)_0.jpg</div><div style="text-align:center;display:inline-block;margin-right:20px;"><a href="./message_7/1718542120/%E7%8E%A9%E5%85%B7%E5%BE%A9%E6%B4%BB%E7%AF%80%20-%E5%AE%A3%E5%82%B3%E5%9C%962%20%281%29_0.jpg" target="_blank"><img src="./thumb/1718542120_玩具復活節 -宣傳圖2 (1)_0.jpg"/></a><br/>玩具復活節 -宣傳圖2 (1)_0.jpg</div><div style="text-align:center;display:inline-block;margin-right:20px;"><a href="./message_7/1718542120/%E7%8E%A9%E5%85%B7%E5%BE%A9%E6%B4%BB%E7%AF%80%20-%E5%AE%A3%E5%82%B3%E5%9C%963%20%281%29_0.jpg" target="_blank"><img src="./thumb/1718542120_玩具復活節 -宣傳圖3 (1)_0.jpg"/></a><br/>玩具復活節 -宣傳圖3 (1)_0.jpg</div><div style="text-align:center;display:inline-block;margin-right:20px;"><a href="./message_7/1718542120/%E7%8E%A9%E5%85%B7%E5%BE%A9%E6%B4%BB%E7%AF%80%20-%E5%AE%A3%E5%82%B3%E5%9C%964%20%281%29_0.jpg" target="_blank"><img src="./thumb/1718542120_玩具復活節 -宣傳圖4 (1)_0.jpg"/></a><br/>玩具復活節 -宣傳圖4 (1)_0.jpg</div><div style="text-align:center;display:inline-block;margin-right:20px;"><a href="./message_7/1718542120/%E7%8E%A9%E5%85%B7%E5%BE%A9%E6%B4%BB%E7%AF%80%20-%E5%AE%A3%E5%82%B3%E5%9C%966%20%281%29_0.jpg" target="_blank"><img src="./thumb/1718542120_玩具復活節 -宣傳圖6 (1)_0.jpg"/></a><br/>玩具復活節 -宣傳圖6 (1)_0.jpg</div>
 		
-</div>`;
-    
-      window.onload = () => {
-        // format publish time
-        const date = document.getElementById("date");
-        date.innerHTML = countDays(date.innerHTML);
+</div>
+          
+        </div>
+      </div>
 
-        // check attachments
-        let attachments = null;
-        try {
-          attachments = content
-            .split(`<hr class="clear-contentunit"/>`)[1]
-            .split(`<hr/>`)[1]
-            .split(`<p>`)[1];
-        } catch (e) {
-          attachments = `<li>無附件</li>`;
+      <div class="mt-4">
+        <a href="https://news.ndhu.me" class="text-slate-500 hover:text-sky-500 cursor-pointer flex items-center gap-1">
+          <span class="material-symbols-outlined text-[larger]">
+            arrow_back
+          </span>
+          返回公告列表
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div id="infoModal"
+    class="fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full hidden opacity-0 transition-opacity duration-300">
+    <div class="relative top-20 mx-auto p-5 border w-96 shadow-lg rounded-md bg-white animate-slide-down">
+      <div class="mt-3">
+        <div class="mt-2 px-7 py-3">
+          <h3 class="text-lg text-gray-500">
+            <span id="modalAuthor"></span>
+          </h3>
+          <p class="text-gray-500 mt-1">
+            <span id="modalDepartment"></span>
+          </p>
+        </div>
+
+        <!-- contact -->
+        <div class="">
+          <!-- Contact button can be added here if needed -->
+        </div>
+
+        <!-- a note -->
+        <div class="mt-3 px-7 py-3">
+          <p class="">
+            公告人聯絡方式，請連結至原始公告查看。
+          </p>
+        </div>
+
+        <div class="items-center px-4 py-3">
+          <button id="closeModal"
+            class="px-4 py-2 text-slate-500 text-base font-medium rounded-md w-full shadow-sm hover:bg-slate-200 hover:text-black focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-sky-500 transition duration-300 ease-in-out">
+            關閉
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Get modal elements
+    const modal = document.getElementById('infoModal');
+    const closeButton = document.getElementById('closeModal');
+    const infoButton = document.getElementById('contactInfo');
+    const modalAuthor = document.getElementById('modalAuthor');
+    const modalDepartment = document.getElementById('modalDepartment');
+
+    // Show modal with animation
+    infoButton.onclick = function () {
+      modal.classList.remove('hidden');
+      setTimeout(() => {
+        modal.classList.remove('opacity-0');
+      }, 10); // Small delay to ensure the display change has taken effect
+      modalAuthor.textContent = '洄瀾共好大學社會責任中心';
+      modalDepartment.textContent = '管理學院';
+    }
+
+    // Close modal with animation
+    function closeModal() {
+      modal.classList.add('opacity-0');
+      setTimeout(() => {
+        modal.classList.add('hidden');
+      }, 300); // Wait for the fade-out animation to complete
+    }
+
+    closeButton.onclick = closeModal;
+
+    // Close modal when clicking outside
+    window.onclick = function (event) {
+      if (event.target == modal) {
+        closeModal();
+      }
+    }
+  </script>
+
+  <script type="text/javascript">
+    let article = document.getElementById("article");
+
+    function countDays(date) {
+      let now = new Date();
+      let target = new Date(date);
+      let diff = now.getTime() - target.getTime();
+      let days = Math.floor(diff / (1000 * 60 * 60 * 24));
+
+      if (days <= 0) {
+        // return n minutes ago
+        let minutes = Math.floor(diff / (1000 * 60));
+        if (minutes <= 5) {
+          return "剛剛";
+        } else if (minutes <= 60) {
+          return `${minutes} 分鐘前`;
+        } else {
+          return `${Math.floor(minutes / 60)} 小時前`;
         }
-        document.getElementById("attachments").innerHTML = attachments;
-      };
-    </script>
-  </body>
+      } else if (days == 1) {
+        return "昨天";
+      } else if (days == 2) {
+        return "前天";
+      } else {
+        return `${days} 天前`;
+      }
+    };
+
+    const content = document.getElementById("article").innerHTML;
+
+    window.onload = () => {
+      // format publish time
+      const date = document.getElementById("date");
+      date.innerHTML = countDays(date.innerHTML);
+    };
+  </script>
+</body>
+
 </html>
