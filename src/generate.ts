@@ -17,7 +17,7 @@ interface News {
     ogImage: string;
 }
 
-const baseUrl = 'https://yc97463.github.io/ndhu-announcement';
+const baseUrl = 'https://raw.githubusercontent.com/yc97463/ndhu-announcement/gh-pages';
 const category = [
     {
         id: 0,
