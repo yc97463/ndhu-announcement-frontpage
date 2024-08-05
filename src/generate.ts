@@ -3,6 +3,7 @@ import * as path from 'path';
 import * as ejs from 'ejs';
 import fetch from 'node-fetch';
 import { fileURLToPath } from 'url';
+import OGImageGenerator from './OGImageGenerator.js';
 
 interface News {
     title: string;
@@ -13,6 +14,7 @@ interface News {
     author: string;
     content: string;
     category: string;
+    ogImage: string;
 }
 
 const baseUrl = 'https://yc97463.github.io/ndhu-announcement';
@@ -104,6 +106,23 @@ const fetchNewsData = async (url: string): Promise<News[]> => {
     return data;
 };
 
+// Add this new function to generate OG images
+async function createOGImageForNewsItem(newsItem: News, outputDir: string): Promise<string> {
+    const generator = new OGImageGenerator(
+        // path.join(__dirname, 'assets', 'logo.png'), // Correct path to your logo
+        outputDir
+    );
+
+    try {
+        const ogImagePath = await generator.generateOGImage(newsItem);
+        console.log(`Generated OG image for "${newsItem.title}"`);
+        return ogImagePath;
+    } catch (error) {
+        console.error(`Failed to generate OG image for "${newsItem.title}":`, error);
+        return ''; // Or a default image path
+    }
+}
+
 category.map(async (item) => {
     console.log(`Generating ${item.name}...`);
 
@@ -138,6 +157,14 @@ category.map(async (item) => {
 
             // add "category" item to the news detail
             newsDetail[0].category = item.name;
+
+            // Generate OG image
+            const ogImageOutputDir = path.join(__dirname, 'dist', 'og');
+            ensureDirSync(ogImageOutputDir);
+            const ogImagePath = await createOGImageForNewsItem(newsDetail[0], ogImageOutputDir);
+
+            // Add ogImage to newsDetail
+            newsDetail[0].ogImage = ogImagePath;
 
             const html = ejs.render(template, { ...newsDetail[0], getOgDescription });
             const outputPath = path.join(outputDir, `${newsItem.timestamp}.html`);
