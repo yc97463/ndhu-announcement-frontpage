@@ -15,9 +15,9 @@ interface News {
     department: string;
     author: string;
     content: string;
-    category: string;
+    category?: string;
     ogImage?: string;
-    hasAttachment: boolean;
+    hasAttachment?: boolean;
 }
 
 interface CustomTextMetrics {
@@ -64,9 +64,11 @@ class OGImageGenerator {
         await this.drawBackground(context);
         // await this.drawLogo(context);
         this.drawTitle(context, newsItem.title);
-        this.drawMetadata(context, newsItem.date, newsItem.category);
+        this.drawMetadata(context, newsItem.date, newsItem.category || 'Uncategorized');
         this.drawContactInfo(context, newsItem.department, newsItem.author);
-        this.drawHasAttachment(context, newsItem.hasAttachment);
+        if (typeof newsItem.hasAttachment === 'boolean') {
+            this.drawHasAttachment(context, newsItem.hasAttachment);
+        }
 
         const optimizedBuffer = await this.optimizeImage(canvas);
         const imagePath = await this.saveImage(optimizedBuffer, newsItem.timestamp);

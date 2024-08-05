@@ -13,9 +13,9 @@ interface News {
     department: string;
     author: string;
     content: string;
-    category: string;
-    ogImage: string;
-    hasAttachment: boolean;
+    category?: string;
+    ogImage?: string;
+    hasAttachment?: boolean;
 }
 
 const baseUrl = 'https://raw.githubusercontent.com/yc97463/ndhu-announcement/gh-pages';
