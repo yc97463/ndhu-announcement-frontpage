@@ -93,18 +93,38 @@ function getOgDescription(content: string): string {
     return '';
 }
 
-const fetchNewsData = async (url: string): Promise<News[]> => {
-    const response = await fetch(url);
-
-    // Use type assertion here
-    const data = (await response.json()) as News[];
-
-    // Optionally, validate the structure of data here
-    if (!Array.isArray(data)) {
-        throw new Error("Data is not an array");
+const fetchNewsData = async (url: string, retries = 3): Promise<News[]> => {
+    try {
+        const response = await fetch(url);
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const text = await response.text();
+        try {
+            const data = JSON.parse(text) as News[];
+            if (!Array.isArray(data)) {
+                throw new Error("Data is not an array");
+            }
+            return data;
+        } catch (jsonError) {
+            console.error(`Error parsing JSON from ${url}:`, jsonError);
+            if (retries > 0) {
+                console.log(`Retrying fetch for ${url}. Attempts left: ${retries - 1}`);
+                return fetchNewsData(url, retries - 1);
+            } else {
+                throw new Error("Failed to parse JSON after multiple attempts");
+            }
+        }
+    } catch (error) {
+        console.error(`Error fetching data from ${url}:`, error);
+        if (retries > 0) {
+            console.log(`Retrying fetch for ${url}. Attempts left: ${retries - 1}`);
+            return fetchNewsData(url, retries - 1);
+        } else {
+            console.error(`Failed to fetch data from ${url} after multiple attempts`);
+            return []; // Return an empty array after all retries fail
+        }
     }
-
-    return data;
 };
 
 // Add this new function to generate OG images
@@ -166,12 +186,7 @@ category.map(async (item) => {
             console.log(`\t ${item.name} \t ${newsItem.title}`);
 
             const news_detail_url = `${baseUrl}/article/${newsItem.timestamp}.json`;
-            let newsDetail: News[] = [];
-            try {
-                newsDetail = await fetchNewsData(news_detail_url);
-            } catch (error) {
-                console.error('Error fetching news detail:', error);
-            }
+            let newsDetail: News[] = await fetchNewsData(news_detail_url);
 
             // add "category" item to the news detail
             newsDetail[0].category = item.name;
