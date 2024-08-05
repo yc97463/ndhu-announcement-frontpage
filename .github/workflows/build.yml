@@ -26,7 +26,7 @@ jobs:
       run: npm install
 
     - name: Build HTML files
-      run: npx ts-node-esm src/generate.ts
+      run: npm run build
 
     # Ensure index.html is copied to dist
     - name: Copy index.html
