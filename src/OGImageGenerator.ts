@@ -7,17 +7,28 @@ import sharp from 'sharp';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
+interface Attachment {
+    fileName: string;
+    fileSize: string;
+    fileURL: string;
+}
+
 interface News {
     title: string;
     timestamp: string;
     url: string;
     date: string;
     department: string;
-    author: string;
+    author: {
+        department: string;
+        name: string;
+        email: string;
+        phone: string;
+    };
     content: string;
     category?: string;
     ogImage?: string;
-    hasAttachment?: boolean;
+    attachments: Attachment[];
 }
 
 interface CustomTextMetrics {
@@ -65,9 +76,11 @@ class OGImageGenerator {
         // await this.drawLogo(context);
         this.drawTitle(context, newsItem.title);
         this.drawMetadata(context, newsItem.date, newsItem.category || 'Uncategorized');
-        this.drawContactInfo(context, newsItem.department, newsItem.author);
-        if (typeof newsItem.hasAttachment === 'boolean') {
-            this.drawHasAttachment(context, newsItem.hasAttachment);
+        this.drawContactInfo(context, newsItem.department, newsItem.author.name);
+        const hasAttachment = newsItem.attachments && newsItem.attachments.length > 0;
+        if (hasAttachment) {
+            const items_number = newsItem.attachments.length;
+            this.drawHasAttachment(context, items_number);
         }
 
         const optimizedBuffer = await this.optimizeImage(canvas);
@@ -123,10 +136,10 @@ class OGImageGenerator {
         this.drawText(context, `${department} ${author}`, 50, this.height - 100, this.width - 100, fontSize);
     }
 
-    private drawHasAttachment(context: CanvasRenderingContext2D, hasAttachment: boolean): void {
+    private drawHasAttachment(context: CanvasRenderingContext2D, itemsNumber: number): void {
         const fontSize = 24;
         context.fillStyle = '#4b5563';
-        this.drawText(context, hasAttachment ? '🈶  有附件' : '', 50, this.height - 150, this.width - 100, fontSize);
+        this.drawText(context, `🈶  ${itemsNumber} 個附件`, 50, this.height - 150, this.width - 100, fontSize);
     }
 
     private wrapText(

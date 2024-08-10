@@ -5,17 +5,28 @@ import fetch from 'node-fetch';
 import { fileURLToPath } from 'url';
 import OGImageGenerator from './OGImageGenerator.js';
 
+interface Attachment {
+    fileName: string;
+    fileSize: string;
+    fileURL: string;
+}
+
 interface News {
     title: string;
     timestamp: string;
     url: string;
     date: string;
     department: string;
-    author: string;
+    author: {
+        department: string;
+        name: string;
+        email: string;
+        phone: string;
+    };
     content: string;
     category?: string;
     ogImage?: string;
-    hasAttachment?: boolean;
+    attachments: Attachment[];
 }
 
 const baseUrl = 'https://raw.githubusercontent.com/yc97463/ndhu-announcement/gh-pages';
@@ -190,7 +201,6 @@ category.map(async (item) => {
 
             // add "category" item to the news detail
             newsDetail[0].category = item.name;
-            newsDetail[0].hasAttachment = checkAttachment(newsDetail[0].content);
 
             // Generate OG image
             const ogImageOutputDir = path.join(__dirname, 'dist', 'og');
@@ -207,6 +217,4 @@ category.map(async (item) => {
         console.log(`Generated ${item.name} page ${i}`);
     }
     console.log(`Generated ${item.name}`);
-
 });
-
