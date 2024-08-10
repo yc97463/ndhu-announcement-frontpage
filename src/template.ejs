@@ -118,10 +118,7 @@
 
       <hr class="my-2" />
       <div>
-        <!-- white-space: pre-wrap; word-wrap: break-word; overflow-wrap: break-word; -->
-        <div id="article" class="overflow-x-auto whitespace-pre-wrap break-words overflow-wrap break-word">
-          <%- content.split('<hr class="clear-contentunit"/>')[1].split(`<hr/>`)[0].split(`</div>`) %>
-          
+          <%- content.split('<hr class="clear-contentunit"/>')[1].split(`<hr/>`)[0].split(`</div>`)[0] %>
         </div>
 
         <hr class="my-2" />
