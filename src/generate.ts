@@ -112,11 +112,15 @@ const fetchNewsData = async (url: string, retries = 3): Promise<News[]> => {
         }
         const text = await response.text();
         try {
-            const data = JSON.parse(text) as News[];
-            if (!Array.isArray(data)) {
-                throw new Error("Data is not an array");
+            const data = JSON.parse(text);
+            if (Array.isArray(data)) {
+                return data;
+            } else if (typeof data === 'object' && data !== null) {
+                return [data];
+            } else {
+                console.log('Unexpected data format:', data);
+                throw new Error("Data is neither an array nor a valid news object");
             }
-            return data;
         } catch (jsonError) {
             console.error(`Error parsing JSON from ${url}:`, jsonError);
             if (retries > 0) {
