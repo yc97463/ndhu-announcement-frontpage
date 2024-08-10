@@ -193,8 +193,16 @@
                     announcement.department
                   }</span>${announcement.title}
                 </h2>
-                <p>${countDays(announcement.date)}</p>
-                <p></p>
+                <div class="text-slate-500 flex flex-wrap items-center gap-2 sm:gap-1">
+                  <div class="flex items-center gap-1">
+                    <span id="date" class="whitespace-nowrap">
+                      ${countDays(announcement.date)}
+                    </span>
+                    <span class="text-slate-500 hidden sm:inline">·</span>
+                  </div>
+
+                  ${announcement.attachmentCount > 0 ? `<span>${announcement.attachmentCount} 📎</span>` : ""}
+                </div>
               </div>
             </a>
             `;
