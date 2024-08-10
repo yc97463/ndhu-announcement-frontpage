@@ -62,36 +62,13 @@
     </style>
   <link rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-  <base href="https://announce.ndhu.edu.tw/" />
 </head>
 
 <body>
   <div class="container my-6">
     <h1 class="text-2xl font-medium mb-4">國立東華大學公告</h1>
-    <!-- <div id="article">
-        <div class="overflow-x-auto">
-            <p class="text-center text-gray-500 ">
-              如果內容無法正常顯示，請前往 <a href="https://announce.ndhu.edu.tw/mail_display.php?timestamp=1719819112">#1719819112</a> 查看。
-            </p>
-          </div>
-      </div> -->
 
     <div class="border-2 border-slate-400 rounded-md my-4 p-3">
-      <!-- <div class="mb-1 text-xl flex items-center gap-1">
-          <h2>📣【訊息轉知】2024勞動部就業博覽會-花蓮場</h2>
-          <span
-            class="material-symbols-outlined text-slate-500 hover:text-sky-500 text-[larger] cursor-pointer"
-            onclick="navigator.clipboard.writeText(window.location.href).then(()=>{alert('已複製連結')})"
-          >
-            share
-          </span>
-          <span
-            class="material-symbols-outlined text-slate-500 hover:text-sky-500 text-[larger] cursor-pointer"
-            onclick="window.open(`https://announce.ndhu.edu.tw/mail_display.php?timestamp=1719819112`)"
-          >
-            open_in_new
-          </span>
-        </div> -->
       <div class="mb-4">
         <div class="flex items-start justify-between gap-2">
           <h2 class="text-xl font-semibold break-words flex-grow">
@@ -99,8 +76,16 @@
           </h2>
           <div class="flex items-center gap-1 flex-shrink-0">
             <button class="p-1 text-slate-500 hover:text-sky-500 focus:outline-none rounded-full"
-              onclick="navigator.clipboard.writeText(window.location.href).then(()=>{alert('已複製連結')})" title="複製連結">
-              <span class="material-symbols-outlined">share</span>
+              onclick="navigator.clipboard.writeText(window.location.href).then(()=>{
+                const linkIcon = document.getElementById('copy-link').querySelector('span');
+                linkIcon.textContent = 'check';
+                linkIcon.classList.add('text-green-500');
+                setTimeout(() => {
+                  linkIcon.textContent = 'link'
+                  linkIcon.classList.remove('text-green-500');
+                }, 2300);
+              })" title="複製連結" id="copy-link">
+              <span class="material-symbols-outlined">link</span>
             </button>
             <button class="p-1 text-slate-500 hover:text-sky-500 rounded-full"
               onclick="window.open(`https://announce.ndhu.edu.tw/mail_display.php?timestamp=1719819112`)"
@@ -158,24 +143,32 @@
         </div>
 
         <hr class="my-2" />
-        <h3 class="text-xl font-medium mb-2">附件</h3>
+        <h3 class="text-xl font-medium mb-2">附件與相關連結</h3>
         <div id="attachments">
           
-            </p><div style="text-align:center;display:inline-block;margin-right:20px;"><a href="./message_7/1719819112/2024%E5%8B%9E%E5%8B%95%E9%83%A8%E5%B0%B1%E6%A5%AD%E5%8D%9A%E8%A6%BD%E6%9C%83-%E8%8A%B1%E8%93%AE.jpg" target="_blank"><img src="./thumb/1719819112_2024勞動部就業博覽會-花蓮.jpg"/></a><br/>2024勞動部就業博覽會-花蓮.jpg</div>
-		
-</div>
+            <ul class="list-disc list-inside">
+              
+                <li class="mb-2">
+                  
+                      <a href="https://announce.ndhu.edu.tw/./message_7/1719819112/2024%E5%8B%9E%E5%8B%95%E9%83%A8%E5%B0%B1%E6%A5%AD%E5%8D%9A%E8%A6%BD%E6%9C%83-%E8%8A%B1%E8%93%AE.jpg" target="_blank"
+                        class="text-blue-500 hover:underline">
+                        2024勞動部就業博覽會-花蓮.jpg (152 KB)
+                      </a>
+                      
+                </li>
+                
+            </ul>
           
         </div>
       </div>
-
-      <div class="mt-4">
-        <a href="https://news.ndhu.me" class="text-slate-500 hover:text-sky-500 cursor-pointer flex items-center gap-1">
-          <span class="material-symbols-outlined text-[larger]">
-            arrow_back
-          </span>
-          返回公告列表
-        </a>
-      </div>
+    </div>
+    <div class="mt-4">
+      <a href="/" class="text-slate-500 hover:text-sky-500 cursor-pointer flex items-center gap-1">
+        <span class="material-symbols-outlined text-[larger]">
+          arrow_back
+        </span>
+        返回公告列表
+      </a>
     </div>
   </div>
 
@@ -194,14 +187,12 @@
         </div>
 
         <!-- contact -->
-        <div class="">
-          <!-- Contact button can be added here if needed -->
-        </div>
-
-        <!-- a note -->
-        <div class="mt-3 px-7 py-3">
-          <p class="">
-            公告人聯絡方式，請連結至原始公告查看。
+        <div class="mt-2 px-7 py-3">
+          <p class="text-gray-500">
+            <span id="modalEmail" />
+          </p>
+          <p class="text-gray-500">
+            <span id="modalPhone" />
           </p>
         </div>
 
@@ -228,11 +219,34 @@
       modal.classList.remove('hidden');
       setTimeout(() => {
         modal.classList.remove('opacity-0');
-      }, 10); // Small delay to ensure the display change has taken effect
+      }, 10);
       modalAuthor.textContent = '溫小姐';
       modalDepartment.textContent = '學務處畢業生及校友服務組';
-    }
+      document.getElementById('modalEmail').innerHTML = `<a href="mailto:fengting0804@gms.ndhu.edu.tw" class="text-sky-500 hover:text-sky-700 cursor-pointer flex items-center gap-1">
+          <span class="material-symbols-outlined text-[larger]">
+            email
+          </span>
+          fengting0804@gms.ndhu.edu.tw
+        </a>
+          `;
 
+      length = '6282'.length;
+      if (length > 4) {
+        modalPhone.innerHTML = `<a href="tel:6282" class="text-sky-500 hover:text-sky-700 cursor-pointer flex items-center gap-1">
+          <span class="material-symbols-outlined text-[larger]">
+            phone
+          </span>
+          6282
+        </a>`;
+      } else {
+        modalPhone.innerHTML = `<a href="tel:038906282" class="text-sky-500 hover:text-sky-700 cursor-pointer flex items-center gap-1">
+          <span class="material-symbols-outlined text-[larger]">
+            phone
+          </span>
+          6282（校內分機）
+        </a>`;
+      }
+    }
     // Close modal with animation
     function closeModal() {
       modal.classList.add('opacity-0');

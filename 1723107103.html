@@ -8,7 +8,7 @@
     【轉知】創業沙龍，報予你知！外籍移民創業家的 24 年經驗分享
   </title>
   <meta property="og:title" content="【轉知】創業沙龍，報予你知！外籍移民創業家的 24 年經驗分享" />
-  <meta property="og:description" content="國立東華大學 2024/08/08「活動公告」公告。
+  <meta property="og:description" content="國立東華大學 2024/08/08「其他公告」公告。
   =============
   東華國際處外籍同學，好：
 
@@ -61,36 +61,13 @@
     </style>
   <link rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-  <base href="https://announce.ndhu.edu.tw/" />
 </head>
 
 <body>
   <div class="container my-6">
     <h1 class="text-2xl font-medium mb-4">國立東華大學公告</h1>
-    <!-- <div id="article">
-        <div class="overflow-x-auto">
-            <p class="text-center text-gray-500 ">
-              如果內容無法正常顯示，請前往 <a href="https://announce.ndhu.edu.tw/mail_display.php?timestamp=1723107103">#1723107103</a> 查看。
-            </p>
-          </div>
-      </div> -->
 
     <div class="border-2 border-slate-400 rounded-md my-4 p-3">
-      <!-- <div class="mb-1 text-xl flex items-center gap-1">
-          <h2>【轉知】創業沙龍，報予你知！外籍移民創業家的 24 年經驗分享</h2>
-          <span
-            class="material-symbols-outlined text-slate-500 hover:text-sky-500 text-[larger] cursor-pointer"
-            onclick="navigator.clipboard.writeText(window.location.href).then(()=>{alert('已複製連結')})"
-          >
-            share
-          </span>
-          <span
-            class="material-symbols-outlined text-slate-500 hover:text-sky-500 text-[larger] cursor-pointer"
-            onclick="window.open(`https://announce.ndhu.edu.tw/mail_display.php?timestamp=1723107103`)"
-          >
-            open_in_new
-          </span>
-        </div> -->
       <div class="mb-4">
         <div class="flex items-start justify-between gap-2">
           <h2 class="text-xl font-semibold break-words flex-grow">
@@ -98,8 +75,16 @@
           </h2>
           <div class="flex items-center gap-1 flex-shrink-0">
             <button class="p-1 text-slate-500 hover:text-sky-500 focus:outline-none rounded-full"
-              onclick="navigator.clipboard.writeText(window.location.href).then(()=>{alert('已複製連結')})" title="複製連結">
-              <span class="material-symbols-outlined">share</span>
+              onclick="navigator.clipboard.writeText(window.location.href).then(()=>{
+                const linkIcon = document.getElementById('copy-link').querySelector('span');
+                linkIcon.textContent = 'check';
+                linkIcon.classList.add('text-green-500');
+                setTimeout(() => {
+                  linkIcon.textContent = 'link'
+                  linkIcon.classList.remove('text-green-500');
+                }, 2300);
+              })" title="複製連結" id="copy-link">
+              <span class="material-symbols-outlined">link</span>
             </button>
             <button class="p-1 text-slate-500 hover:text-sky-500 rounded-full"
               onclick="window.open(`https://announce.ndhu.edu.tw/mail_display.php?timestamp=1723107103`)"
@@ -119,7 +104,7 @@
 
         <div class="flex items-center gap-1">
           <span id="category" class="whitespace-nowrap">
-            活動公告
+            其他公告
           </span>
           <span class="text-slate-500 hidden sm:inline">·</span>
         </div>
@@ -163,27 +148,50 @@
 
 🗣️活動全程使用英語進行</pre>
 		
-</div>
+,
           
         </div>
 
         <hr class="my-2" />
-        <h3 class="text-xl font-medium mb-2">附件</h3>
+        <h3 class="text-xl font-medium mb-2">附件與相關連結</h3>
         <div id="attachments">
           
-            <li>無附件</li>
+            <ul class="list-disc list-inside">
+              
+                <li class="mb-2">
+                  
+                      <a href="https://bnext.surveycake.biz/s/v2v96" target="_blank" class="text-blue-500 hover:underline inline-flex items-center gap-1">
+                        https://bnext.surveycake.biz/s/v2v96
+                        <span class="material-symbols-outlined text-[larger]">
+                          open_in_new
+                        </span>
+                      </a>
+                    
+                </li>
+                
+                <li class="mb-2">
+                  
+                      <a href="https://bnext.surveycake.biz/s/v2v96" target="_blank" class="text-blue-500 hover:underline inline-flex items-center gap-1">
+                        https://bnext.surveycake.biz/s/v2v96
+                        <span class="material-symbols-outlined text-[larger]">
+                          open_in_new
+                        </span>
+                      </a>
+                    
+                </li>
+                
+            </ul>
           
         </div>
       </div>
-
-      <div class="mt-4">
-        <a href="https://news.ndhu.me" class="text-slate-500 hover:text-sky-500 cursor-pointer flex items-center gap-1">
-          <span class="material-symbols-outlined text-[larger]">
-            arrow_back
-          </span>
-          返回公告列表
-        </a>
-      </div>
+    </div>
+    <div class="mt-4">
+      <a href="/" class="text-slate-500 hover:text-sky-500 cursor-pointer flex items-center gap-1">
+        <span class="material-symbols-outlined text-[larger]">
+          arrow_back
+        </span>
+        返回公告列表
+      </a>
     </div>
   </div>
 
@@ -202,14 +210,12 @@
         </div>
 
         <!-- contact -->
-        <div class="">
-          <!-- Contact button can be added here if needed -->
-        </div>
-
-        <!-- a note -->
-        <div class="mt-3 px-7 py-3">
-          <p class="">
-            公告人聯絡方式，請連結至原始公告查看。
+        <div class="mt-2 px-7 py-3">
+          <p class="text-gray-500">
+            <span id="modalEmail" />
+          </p>
+          <p class="text-gray-500">
+            <span id="modalPhone" />
           </p>
         </div>
 
@@ -236,11 +242,34 @@
       modal.classList.remove('hidden');
       setTimeout(() => {
         modal.classList.remove('opacity-0');
-      }, 10); // Small delay to ensure the display change has taken effect
+      }, 10);
       modalAuthor.textContent = '羅靖儀';
       modalDepartment.textContent = '國際事務處';
-    }
+      document.getElementById('modalEmail').innerHTML = `<a href="mailto:oia@gms.ndhu.edu.tw" class="text-sky-500 hover:text-sky-700 cursor-pointer flex items-center gap-1">
+          <span class="material-symbols-outlined text-[larger]">
+            email
+          </span>
+          oia@gms.ndhu.edu.tw
+        </a>
+          `;
 
+      length = '（03）8905171'.length;
+      if (length > 4) {
+        modalPhone.innerHTML = `<a href="tel:（03）8905171" class="text-sky-500 hover:text-sky-700 cursor-pointer flex items-center gap-1">
+          <span class="material-symbols-outlined text-[larger]">
+            phone
+          </span>
+          （03）8905171
+        </a>`;
+      } else {
+        modalPhone.innerHTML = `<a href="tel:03890（03）8905171" class="text-sky-500 hover:text-sky-700 cursor-pointer flex items-center gap-1">
+          <span class="material-symbols-outlined text-[larger]">
+            phone
+          </span>
+          （03）8905171（校內分機）
+        </a>`;
+      }
+    }
     // Close modal with animation
     function closeModal() {
       modal.classList.add('opacity-0');

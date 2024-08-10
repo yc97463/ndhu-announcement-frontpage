@@ -61,36 +61,13 @@
     </style>
   <link rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-  <base href="https://announce.ndhu.edu.tw/" />
 </head>
 
 <body>
   <div class="container my-6">
     <h1 class="text-2xl font-medium mb-4">國立東華大學公告</h1>
-    <!-- <div id="article">
-        <div class="overflow-x-auto">
-            <p class="text-center text-gray-500 ">
-              如果內容無法正常顯示，請前往 <a href="https://announce.ndhu.edu.tw/mail_display.php?timestamp=1716168318">#1716168318</a> 查看。
-            </p>
-          </div>
-      </div> -->
 
     <div class="border-2 border-slate-400 rounded-md my-4 p-3">
-      <!-- <div class="mb-1 text-xl flex items-center gap-1">
-          <h2>📢造舟課說明會📢就是今天!快來參加「格稜蘭骨架蒙皮舟製作」課程說明會!</h2>
-          <span
-            class="material-symbols-outlined text-slate-500 hover:text-sky-500 text-[larger] cursor-pointer"
-            onclick="navigator.clipboard.writeText(window.location.href).then(()=>{alert('已複製連結')})"
-          >
-            share
-          </span>
-          <span
-            class="material-symbols-outlined text-slate-500 hover:text-sky-500 text-[larger] cursor-pointer"
-            onclick="window.open(`https://announce.ndhu.edu.tw/mail_display.php?timestamp=1716168318`)"
-          >
-            open_in_new
-          </span>
-        </div> -->
       <div class="mb-4">
         <div class="flex items-start justify-between gap-2">
           <h2 class="text-xl font-semibold break-words flex-grow">
@@ -98,8 +75,16 @@
           </h2>
           <div class="flex items-center gap-1 flex-shrink-0">
             <button class="p-1 text-slate-500 hover:text-sky-500 focus:outline-none rounded-full"
-              onclick="navigator.clipboard.writeText(window.location.href).then(()=>{alert('已複製連結')})" title="複製連結">
-              <span class="material-symbols-outlined">share</span>
+              onclick="navigator.clipboard.writeText(window.location.href).then(()=>{
+                const linkIcon = document.getElementById('copy-link').querySelector('span');
+                linkIcon.textContent = 'check';
+                linkIcon.classList.add('text-green-500');
+                setTimeout(() => {
+                  linkIcon.textContent = 'link'
+                  linkIcon.classList.remove('text-green-500');
+                }, 2300);
+              })" title="複製連結" id="copy-link">
+              <span class="material-symbols-outlined">link</span>
             </button>
             <button class="p-1 text-slate-500 hover:text-sky-500 rounded-full"
               onclick="window.open(`https://announce.ndhu.edu.tw/mail_display.php?timestamp=1716168318`)"
@@ -159,24 +144,52 @@
         </div>
 
         <hr class="my-2" />
-        <h3 class="text-xl font-medium mb-2">附件</h3>
+        <h3 class="text-xl font-medium mb-2">附件與相關連結</h3>
         <div id="attachments">
           
-            </p><div style="text-align:center;display:inline-block;margin-right:20px;"><a href="./message_7/1716168318/%E7%94%9F%E5%91%BD%E9%80%A0%E8%88%9F.jpg" target="_blank"><img src="./thumb/1716168318_生命造舟.jpg"/></a><br/>生命造舟.jpg</div><div style="text-align:center;display:inline-block;margin-right:20px;"><a href="./message_7/1716168318/%E9%80%9A%E8%AD%98-%E9%80%A0%E8%88%9F%E8%AA%B2%E7%A8%8B-%E8%AA%B2%E7%A8%8B%E8%AA%AA%E6%98%8E113-1.pdf" target="_blank"><img src="./thumb/1716168318_通識-造舟課程-課程說明113-1.pdf.jpg"/></a><br/>通識-造舟課程-課程說明113-1.pdf</div>
-		
-</div>
+            <ul class="list-disc list-inside">
+              
+                <li class="mb-2">
+                  
+                      <a href="https://announce.ndhu.edu.tw/./message_7/1716168318/%E7%94%9F%E5%91%BD%E9%80%A0%E8%88%9F.jpg" target="_blank"
+                        class="text-blue-500 hover:underline">
+                        生命造舟.jpg (315 KB)
+                      </a>
+                      
+                </li>
+                
+                <li class="mb-2">
+                  
+                      <a href="https://announce.ndhu.edu.tw/./message_7/1716168318/%E9%80%9A%E8%AD%98-%E9%80%A0%E8%88%9F%E8%AA%B2%E7%A8%8B-%E8%AA%B2%E7%A8%8B%E8%AA%AA%E6%98%8E113-1.pdf" target="_blank"
+                        class="text-blue-500 hover:underline">
+                        通識-造舟課程-課程說明113-1.pdf (315 KB)
+                      </a>
+                      
+                </li>
+                
+                <li class="mb-2">
+                  
+                      <a href="https://meet.google.com/cwd-zzzh-gaf" target="_blank" class="text-blue-500 hover:underline inline-flex items-center gap-1">
+                        https://meet.google.com/cwd-zzzh-gaf
+                        <span class="material-symbols-outlined text-[larger]">
+                          open_in_new
+                        </span>
+                      </a>
+                    
+                </li>
+                
+            </ul>
           
         </div>
       </div>
-
-      <div class="mt-4">
-        <a href="https://news.ndhu.me" class="text-slate-500 hover:text-sky-500 cursor-pointer flex items-center gap-1">
-          <span class="material-symbols-outlined text-[larger]">
-            arrow_back
-          </span>
-          返回公告列表
-        </a>
-      </div>
+    </div>
+    <div class="mt-4">
+      <a href="/" class="text-slate-500 hover:text-sky-500 cursor-pointer flex items-center gap-1">
+        <span class="material-symbols-outlined text-[larger]">
+          arrow_back
+        </span>
+        返回公告列表
+      </a>
     </div>
   </div>
 
@@ -195,14 +208,12 @@
         </div>
 
         <!-- contact -->
-        <div class="">
-          <!-- Contact button can be added here if needed -->
-        </div>
-
-        <!-- a note -->
-        <div class="mt-3 px-7 py-3">
-          <p class="">
-            公告人聯絡方式，請連結至原始公告查看。
+        <div class="mt-2 px-7 py-3">
+          <p class="text-gray-500">
+            <span id="modalEmail" />
+          </p>
+          <p class="text-gray-500">
+            <span id="modalPhone" />
           </p>
         </div>
 
@@ -229,11 +240,34 @@
       modal.classList.remove('hidden');
       setTimeout(() => {
         modal.classList.remove('opacity-0');
-      }, 10); // Small delay to ensure the display change has taken effect
+      }, 10);
       modalAuthor.textContent = '徐小姐';
       modalDepartment.textContent = '社會參與中心';
-    }
+      document.getElementById('modalEmail').innerHTML = `<a href="mailto:hsu-pangju@gms.ndhu.edu.tw" class="text-sky-500 hover:text-sky-700 cursor-pointer flex items-center gap-1">
+          <span class="material-symbols-outlined text-[larger]">
+            email
+          </span>
+          hsu-pangju@gms.ndhu.edu.tw
+        </a>
+          `;
 
+      length = '5247'.length;
+      if (length > 4) {
+        modalPhone.innerHTML = `<a href="tel:5247" class="text-sky-500 hover:text-sky-700 cursor-pointer flex items-center gap-1">
+          <span class="material-symbols-outlined text-[larger]">
+            phone
+          </span>
+          5247
+        </a>`;
+      } else {
+        modalPhone.innerHTML = `<a href="tel:038905247" class="text-sky-500 hover:text-sky-700 cursor-pointer flex items-center gap-1">
+          <span class="material-symbols-outlined text-[larger]">
+            phone
+          </span>
+          5247（校內分機）
+        </a>`;
+      }
+    }
     // Close modal with animation
     function closeModal() {
       modal.classList.add('opacity-0');
