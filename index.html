@@ -198,10 +198,9 @@
                     <span id="date" class="whitespace-nowrap">
                       ${countDays(announcement.date)}
                     </span>
-                    <span class="text-slate-500 hidden sm:inline">·</span>
                   </div>
 
-                  ${announcement.attachmentCount > 0 ? `<span>${announcement.attachmentCount} 📎</span>` : ""}
+                  ${announcement.attachmentCount > 0 ? `<span class="text-slate-500 hidden sm:inline">·</span><span class="hasAttachment">📎</span>` : ""}
                 </div>
               </div>
             </a>
