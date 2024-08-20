@@ -26,11 +26,7 @@ jobs:
       run: npm install
 
     - name: Build HTML files
-      run: npm run build
-
-    # Ensure index.html is copied to dist
-    - name: Copy index.html
-      run: cp index.html src/dist/index.html
+      run: npm run build all
 
     - name: Upload HTML files
       uses: actions/upload-artifact@v2
