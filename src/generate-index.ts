@@ -70,7 +70,6 @@ async function generateIndexPage() {
     const allAnnouncements: { category: Category; announcements: Announcement[] }[] = [];
 
     for (const category of categories) {
-        if (category.id === 0) continue; // Skip "全部消息"
         console.log(`Fetching ${category.name}...`);
         const url = `${baseUrl}/${category.category}/1.json`;
         const announcements = await fetchAnnouncementData(url);
