@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -27,80 +28,67 @@
         };
     </script>
 </head>
+
 <body>
     <div class="container my-6">
         <h1 class="text-4xl font-medium mb-4">國立東華大學公告</h1>
         <div id="category">
-            <% categories.forEach(category => { %>
-                <a href="#<%= category.category %>" class="mr-4 text-sky-500 hover:text-sky-600"><%= category.name %></a>
-            <% }); %>
+            <% categories.forEach(category=> { %>
+                <a href="#<%= category.category %>" class="mr-4 text-sky-500 hover:text-sky-600">
+                    <%= category.name %>
+                </a>
+                <% }); %>
         </div>
         <div class="my-6">
-            <input
-                type="text"
-                id="search"
-                class="border-2 border-slate-300 rounded-md p-2 w-full"
-                placeholder="搜尋公告"
-            />
+            <input type="text" id="search" class="border-2 border-slate-300 rounded-md p-2 w-full" placeholder="搜尋公告" />
         </div>
         <hr class="my-6" />
         <div id="all">
-            <% allAnnouncements.forEach(({ category, announcements }) => { %>
+            <% allAnnouncements.forEach(({ category, announcements })=> { %>
                 <div class="mb-6">
                     <a id="<%= category.category %>"></a>
-                    <h2 class="text-2xl font-medium mb-4"><%= category.name %></h2>
-                    <% announcements.forEach(announcement => { %>
+                    <h2 class="text-2xl font-medium mb-4">
+                        <%= category.name %>
+                    </h2>
+                    <% announcements.forEach(announcement=> { %>
                         <a href="<%= announcement.timestamp %>.html" target="_blank">
                             <div class="border-2 border-slate-300 hover:border-slate-400 rounded-md my-4 p-3">
                                 <h2 class="mb-1">
-                                    <span class="bg-sky-500/75 text-white py-[2px] px-[8px] mr-2 rounded-lg">#<%= announcement.department %></span><%= announcement.title %>
+                                    <span class="bg-sky-500/75 text-white py-[2px] px-[8px] mr-2 rounded-lg">#<%=
+                                            announcement.department %></span>
+                                    <%= announcement.title %>
                                 </h2>
                                 <div class="text-slate-500 flex flex-wrap items-center gap-2 sm:gap-1">
                                     <div class="flex items-center gap-1">
-                                        <span id="date" class="whitespace-nowrap">
-                                            <%= countDays(announcement.date) %>
+                                        <span class="date whitespace-nowrap" data-date="<%= announcement.date %>">
+                                            <%= announcement.date %>
                                         </span>
                                     </div>
-                                    <% if (announcement.attachmentCount > 0) { %>
-                                        <span class="text-slate-500 hidden sm:inline">·</span><span class="hasAttachment">📎</span>
-                                    <% } %>
+                                    <% if (announcement.attachmentCount> 0) { %>
+                                        <span class="text-slate-500 hidden sm:inline">·</span><span
+                                            class="hasAttachment">📎</span>
+                                        <% } %>
                                 </div>
                             </div>
                         </a>
-                    <% }); %>
+                        <% }); %>
                 </div>
-            <% }); %>
+                <% }); %>
         </div>
     </div>
     <div class="container footer text-center text-slate-500">
         <p class="mb-2">
             更多公告請至
-            <a
-                href="https://announce.ndhu.edu.tw/"
-                target="_blank"
-                class="text-sky-500 hover:text-sky-600"
-            >國立東華大學公告</a>
+            <a href="https://announce.ndhu.edu.tw/" target="_blank" class="text-sky-500 hover:text-sky-600">國立東華大學公告</a>
         </p>
     </div>
 
-    <a
-        href="#"
+    <a href="#"
         class="fixed bottom-4 right-4 bg-sky-500 text-white p-3 rounded-full shadow-lg hover:bg-sky-600 hover:text-white transition-all duration-300"
-        id="top"
-    >
-        <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="h-6 w-6 transform rotate-0"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-        >
-            <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M5 10l7-7m0 0l7 7m-7-7v18"
-            />
+        id="top">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 transform rotate-0" fill="none" viewBox="0 0 24 24"
+            stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
         </svg>
     </a>
 
@@ -124,6 +112,42 @@
                 }
             });
         };
+        function timeAgo(date) {
+            const seconds = Math.floor((new Date() - new Date(date)) / 1000);
+            let interval = seconds / 31536000;
+
+            if (interval > 1) {
+                return Math.floor(interval) + " 年前";
+            }
+            interval = seconds / 2592000;
+            if (interval > 1) {
+                return Math.floor(interval) + " 個月前";
+            }
+            interval = seconds / 86400;
+            if (interval > 1) {
+                return Math.floor(interval) + " 天前";
+            }
+            interval = seconds / 3600;
+            if (interval > 1) {
+                return Math.floor(interval) + " 小時前";
+            }
+            interval = seconds / 60;
+            if (interval > 1) {
+                return Math.floor(interval) + " 分鐘前";
+            }
+            return Math.floor(seconds) + " 秒前";
+        }
+
+        function updateDates() {
+            document.querySelectorAll('.date').forEach(el => {
+                const originalDate = el.getAttribute('data-date');
+                el.textContent = timeAgo(originalDate);
+            });
+        }
+
+        updateDates();
+        setInterval(updateDates, 60000); // Update every minute
     </script>
 </body>
+
 </html>

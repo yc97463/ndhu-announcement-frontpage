@@ -44,30 +44,6 @@ function ensureDirSync(dirPath: string) {
     }
 }
 
-function countDays(date: string): string {
-    let now = new Date();
-    let target = new Date(date);
-    let diff = now.getTime() - target.getTime();
-    let days = Math.floor(diff / (1000 * 60 * 60 * 24));
-
-    if (days <= 0) {
-        let minutes = Math.floor(diff / (1000 * 60));
-        if (minutes <= 5) {
-            return "剛剛";
-        } else if (minutes <= 60) {
-            return `${minutes} 分鐘前`;
-        } else {
-            return `${Math.floor(minutes / 60)} 小時前`;
-        }
-    } else if (days == 1) {
-        return "昨天";
-    } else if (days == 2) {
-        return "前天";
-    } else {
-        return `${days} 天前`;
-    }
-}
-
 const fetchAnnouncementData = async (url: string, retries = 3): Promise<Announcement[]> => {
     try {
         const response = await fetch(url);
@@ -94,6 +70,7 @@ async function generateIndexPage() {
     const allAnnouncements: { category: Category; announcements: Announcement[] }[] = [];
 
     for (const category of categories) {
+        if (category.id === 0) continue; // Skip "全部消息"
         console.log(`Fetching ${category.name}...`);
         const url = `${baseUrl}/${category.category}/1.json`;
         const announcements = await fetchAnnouncementData(url);
@@ -103,7 +80,7 @@ async function generateIndexPage() {
     const outputDir = path.join(__dirname, 'dist');
     ensureDirSync(outputDir);
 
-    const html = ejs.render(template, { categories, allAnnouncements, countDays });
+    const html = ejs.render(template, { categories, allAnnouncements });
     const outputPath = path.join(outputDir, 'index.html');
     fs.writeFileSync(outputPath, html);
 
