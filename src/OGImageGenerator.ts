@@ -10,7 +10,8 @@ const __dirname = path.dirname(__filename);
 interface Attachment {
     fileName: string;
     fileSize: string;
-    fileURL: string;
+    filePath: string;
+    thumbPath: string;
 }
 
 interface News {

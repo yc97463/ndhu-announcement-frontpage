@@ -8,7 +8,8 @@ import OGImageGenerator from './OGImageGenerator.js';
 interface Attachment {
     fileName: string;
     fileSize: string;
-    fileURL: string;
+    filePath: string;
+    thumbPath: string;
 }
 
 interface News {
