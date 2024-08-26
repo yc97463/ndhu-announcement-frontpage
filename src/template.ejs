@@ -129,15 +129,15 @@
             <ul class="list-disc list-inside">
               <% attachments.forEach(function(attachment) { %>
                 <li class="mb-2">
-                  <% if (attachment.fileURL.startsWith('http')) { %>
-                      <a href="<%= attachment.fileURL %>" target="_blank" class="text-blue-500 hover:underline inline-flex items-center gap-1">
+                  <% if (attachment.filePath.startsWith('http')) { %>
+                      <a href="<%= attachment.filePath %>" target="_blank" class="text-blue-500 hover:underline inline-flex items-center gap-1">
                         <%= attachment.fileName %>
                         <span class="material-symbols-outlined text-[larger]">
                           open_in_new
                         </span>
                       </a>
                     <% } else { %>
-                      <a href="https://announce.ndhu.edu.tw/<%= attachment.fileURL %>" target="_blank"
+                      <a href="https://announce.ndhu.edu.tw/<%= attachment.filePath %>" target="_blank"
                         class="text-blue-500 hover:underline">
                         <%= attachment.fileName %> <%= attachment.fileSize %>
                       </a>
